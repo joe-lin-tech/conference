@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby + Node.js API`,
-      siteUrl: `https://gatsby-template.vercel.app`,
+    title: `Autonomous Vehicle Conference`,
   },
   plugins: [
-
-  ]
+    `gatsby-plugin-postcss`,
+    `gatsby-plugin-transition-link`
+  ],
 }
