@@ -15,22 +15,10 @@ const Navigation = ({ page }) => {
         </AniLink>
         <div className="flex items-center space-x-1">
           <div className="hidden space-x-1 md:inline-flex">
-            <AniLink fade to="/about" duration={1}>
-              <a className="btn btn-sm btn-link">About the Team</a>
-            </AniLink>
-            <AniLink fade to="/agenda" duration={1}>
-              <a className="btn btn-sm btn-link">Conference Agenda</a>
-            </AniLink>
-            <AniLink fade to="/about" duration={1}>
-              <a className="btn btn-sm btn-link">Sponsors</a>
-            </AniLink>
-            <AniLink fade to="/about" duration={1}>
-              <a className="btn btn-sm btn-link">Contact</a>
-            </AniLink>
-            {/* <a href="/about" className="btn btn-sm btn-link">About the Team</a>
-            <a href="/agenda" className="btn btn-sm btn-link">Conference Agenda</a>
-            <a href="#" className="btn btn-sm btn-link">Sponsors</a>
-            <a href="#" className="btn btn-sm btn-link">Contact</a> */}
+            <AniLink className="btn btn-sm btn-link" fade to="/about" duration={1}>About the Team</AniLink>
+            <AniLink className="btn btn-sm btn-link" fade to="/agenda" duration={1}>Conference Agenda</AniLink>
+            <AniLink className="btn btn-sm btn-link" fade to="/about" duration={1}>Sponsors</AniLink>
+            <AniLink className="btn btn-sm btn-link" fade to="/about" duration={1}>Contact</AniLink>
           </div>
           <a href="#" className="btn btn-sm btn-primary">Register</a>
           <div className="inline-flex md:hidden" x-data="{ open: false }">
