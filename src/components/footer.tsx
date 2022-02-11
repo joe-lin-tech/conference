@@ -1,13 +1,13 @@
 import React from "react"
+import { StaticImage } from "gatsby-plugin-image"
 
 const Footer = () => {
-  const LogoIcon = require("../images/logo-icon.png")
   return (
     <footer className="px-4 py-12 mx-auto max-w-7xl">
       <div className="grid grid-cols-2 gap-10 mb-3 md:grid-cols-3 lg:grid-cols-12 lg:gap-20">
         <div className="col-span-3">
           <a href="/" title="Go to Kutty Home Page">
-            <img src={LogoIcon} width="150" alt="Logo" />
+            <StaticImage src="../images/logo-icon.png" alt="Logo" placeholder="none" width={150} />
             <span className="sr-only">Kutty Home Page</span>
           </a>
           <p className="my-4 text-xs leading-normal text-gray-500">

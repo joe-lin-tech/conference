@@ -1,14 +1,15 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
+import { StaticImage } from "gatsby-plugin-image"
 
 const Navigation = ({ page }) => {
-  const LogoIcon = require("../images/logo-icon.png")
   return (
     <header className="z-30 w-full px-2 py-4 bg-white sm:px-4">
       <div className="flex items-center justify-between mx-auto max-w-7xl">
         <AniLink fade to="/">
           <a title="Autonomous Vehicle Conference Home Page" className="flex items-center">
-            <img src={LogoIcon} width="150" alt="Logo" />
+            <StaticImage src="../images/logo-icon.png" alt="Logo" placeholder="none" width={150} />
             <span className="sr-only">Autonomous Vehicle</span>
           </a>
         </AniLink>

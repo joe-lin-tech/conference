@@ -1,12 +1,33 @@
 import React from "react"
 import '../styles/global.css';
+import { useStaticQuery, graphql } from "gatsby"
+// import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { StaticImage } from "gatsby-plugin-image";
 
 const ProfileCard = ({ name, position, image }) => {
-  const ProfileImage = require("../images/profiles/joe-lin.jpeg")
-  // const ProfileImage = require(image)
+  // const ProfileImage = require("../images/profiles/joe-lin.jpeg")
+  // const ProfileImage = useStaticQuery(graphql`
+  //   query {
+  //     blogPost(image: { eq: $image }) {
+  //       title
+  //       body
+  //       author
+  //       avatar {
+  //         childImageSharp {
+  //           gatsbyImageData(
+  //             width: 200
+  //             placeholder: BLURRED
+  //             formats: [AUTO, WEBP, AVIF]
+  //           )
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
   return (
     <div className="flex flex-col items-center p-8 transition-colors duration-200 transform cursor-pointer group hover:bg-blue-600 rounded-xl">
-      <img className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300" src={ProfileImage} alt="" />
+      {/* <img className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300" src={ProfileImage} alt="" /> */}
+      <StaticImage className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300" src="../images/profiles/joe-lin.jpeg" alt="" />
       <h1 className="mt-4 text-2xl font-semibold text-gray-900 capitalize group-hover:text-white">{name}</h1>
       <p className="mt-2 text-gray-500 capitalize group-hover:text-gray-300">{position}</p>
       <div className="flex mt-3 -mx-2">

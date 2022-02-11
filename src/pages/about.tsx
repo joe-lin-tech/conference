@@ -19,7 +19,7 @@ const About = () => {
         </div>
         <div className="grid gap-8 grid-cols-4">
           <div className="col-start-2">
-            <ProfileCard name="Joe Lin" position="Conference Lead" image="../images/profiles/joe-lin.jpeg" />
+            <ProfileCard name="Joe Lin" position="Conference Lead" image="joe-lin.jpeg" />
           </div>
           <div className="col-end-4">
             <ProfileCard name="Tabitha Colter" position="Conference Lead" image="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" />
