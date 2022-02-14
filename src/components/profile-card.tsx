@@ -1,5 +1,4 @@
-import React from "react"
-import '../styles/global.css';
+import React from "react";
 import { useStaticQuery, graphql } from "gatsby"
 // import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { StaticImage } from "gatsby-plugin-image";
@@ -61,4 +60,4 @@ const ProfileCard = ({ name, position, image }) => {
   )
 }
 
-export default ProfileCard
+export default ProfileCard;

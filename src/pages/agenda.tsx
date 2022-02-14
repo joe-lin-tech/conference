@@ -1,6 +1,6 @@
 import React from "react";
 import PageLayout from '../components/page-layout';
-import ProfileCard from "../components/profile-card";
+import Session from "../components/session";
 
 const Agenda = () => {
   return (
@@ -17,19 +17,13 @@ const Agenda = () => {
             Here's what to look forward to at our autonomous vehicle national conference! Use the attached zoom links to join the respective sessions on the conference day!
           </p>
         </div>
-        <div className="grid gap-8 grid-cols-4">
-          <div className="col-start-2">
-            <ProfileCard name="Joe Lin" position="Conference Lead" image="../images/profiles/joe-lin.jpeg" />
-          </div>
-          <div className="col-end-4">
-            <ProfileCard name="Tabitha Colter" position="Conference Lead" image="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" />
-          </div>
-          <div className="col-start-1">
-            <ProfileCard name="First Last" position="Logistics Lead" image="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" />
-          </div>
-          <ProfileCard name="First Last" position="Promotion Lead" image="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" />
-          <ProfileCard name="First Last" position="Outreach Lead" image="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" />
-          <ProfileCard name="First Last" position="Response Lead" image="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" />
+        <div className="grid gap-8 grid-cols-3">
+          <Session title="Current State-of-the-Art Object Detection Deep Learning Networks" description="TODO" category="Engineering" image="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" />
+          <Session title="Responsibility and Accountability for Automated Vehicles" description="TODO" category="Ethics" image="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" />
+          <Session title="Urban Mobility Policy for Autonomous Vehicles" description="TODO" category="Policy" image="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" />
+          <Session title="Autonomous Vehicle Technology" description="TODO" category="Engineering" image="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" />
+          <Session title="Autonomous Vehicle Technology" description="TODO" category="Engineering" image="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" />
+          <Session title="Autonomous Vehicle Technology" description="TODO" category="Engineering" image="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" />
         </div>
       </section>
     </PageLayout>

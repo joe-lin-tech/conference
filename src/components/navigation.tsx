@@ -7,20 +7,18 @@ const Navigation = ({ page }) => {
   return (
     <header className="z-30 w-full px-2 py-4 bg-white sm:px-4">
       <div className="flex items-center justify-between mx-auto max-w-7xl">
-        <AniLink fade to="/">
-          <a title="Autonomous Vehicle Conference Home Page" className="flex items-center">
-            <StaticImage src="../images/logo-icon.png" alt="Logo" placeholder="none" width={150} />
-            <span className="sr-only">Autonomous Vehicle</span>
-          </a>
+        <AniLink fade to="/" title="Autonomous Vehicle Conference Home Page" className="flex items-center">
+          <StaticImage src="../images/logo-icon.png" alt="Logo" placeholder="none" width={150} />
+          <span className="sr-only">Autonomous Vehicle</span>
         </AniLink>
         <div className="flex items-center space-x-1">
           <div className="hidden space-x-1 md:inline-flex">
             <AniLink className="btn btn-sm btn-link" fade to="/about" duration={1}>About the Team</AniLink>
             <AniLink className="btn btn-sm btn-link" fade to="/agenda" duration={1}>Conference Agenda</AniLink>
-            <AniLink className="btn btn-sm btn-link" fade to="/about" duration={1}>Sponsors</AniLink>
+            <AniLink className="btn btn-sm btn-link" fade to="/sponsors" duration={1}>Sponsors</AniLink>
             <AniLink className="btn btn-sm btn-link" fade to="/about" duration={1}>Contact</AniLink>
           </div>
-          <a href="#" className="btn btn-sm btn-primary">Register</a>
+          <AniLink className="btn btn-sm btn-primary" fade to="/auth" duration={1}>Register</AniLink>
           <div className="inline-flex md:hidden" x-data="{ open: false }">
             <button className="flex-none px-2 btn btn-link btn-sm">
               <svg
