@@ -1,6 +1,7 @@
 import React from "react";
 import PageLayout from '../components/page-layout';
 import ProfileCard from "../components/profile-card";
+import { StaticImage } from "gatsby-plugin-image";
 
 const About = () => {
   return (
@@ -19,17 +20,17 @@ const About = () => {
         </div>
         <div className="grid gap-8 grid-cols-4">
           <div className="col-start-2">
-            <ProfileCard name="Joe Lin" position="Conference Lead" image="joe-lin.jpeg" />
+            <ProfileCard name="Joe Lin" position="Conference Lead" image={<StaticImage className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300" src="../images/profiles/joe-lin.jpeg" alt="" />} />
           </div>
           <div className="col-end-4">
-            <ProfileCard name="Tabitha Colter" position="Conference Lead" image="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" />
+            <ProfileCard name="Tabitha Colter" position="Conference Lead" image={<StaticImage className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300" src="../images/profiles/tabitha-colter.jpeg" alt="" />} />
           </div>
           <div className="col-start-1">
-            <ProfileCard name="First Last" position="Logistics Lead" image="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" />
+            <ProfileCard name="First Last" position="Logistics Lead" image={<StaticImage className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300" src="../images/profiles/joe-lin.jpeg" alt="" />} />
           </div>
-          <ProfileCard name="First Last" position="Promotion Lead" image="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" />
-          <ProfileCard name="First Last" position="Outreach Lead" image="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" />
-          <ProfileCard name="First Last" position="Response Lead" image="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" />
+          <ProfileCard name="First Last" position="Promotion Lead" image={<StaticImage className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300" src="../images/profiles/joe-lin.jpeg" alt="" />} />
+          <ProfileCard name="First Last" position="Outreach Lead" image={<StaticImage className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300" src="../images/profiles/joe-lin.jpeg" alt="" />} />
+          <ProfileCard name="First Last" position="Response Lead" image={<StaticImage className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300" src="../images/profiles/joe-lin.jpeg" alt="" />} />
         </div>
       </section>
     </PageLayout>

@@ -11,7 +11,7 @@ const Home = () => {
             Come to the <span className="block w-full text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 lg:inline">autonomous vehicle</span> conference to learn about its engineering, ethics, and policymaking.
           </h1>
           <p className="px-0 mb-6 text-lg text-gray-600 md:text-xl lg:px-24">
-            The Autonomous Vehicle Conference is a unique opportunity to learn about the future of autonomous vehicles.
+            The National Autonomous Vehicle Conference is a unique opportunity to learn about the future of autonomous vehicles.
           </p>
           <div className="mb-4 space-x-0 md:space-x-2 md:mb-8">
             <a className="inline-flex items-center justify-center w-full mb-2 btn btn-primary btn-lg sm:w-auto sm:mb-0" href="#">
@@ -48,13 +48,11 @@ const Home = () => {
         </div> */}
         <p className="mt-16 text-base font-medium text-center text-gray-500">
           We've partnered with various industry-leading companies and startups to provide you the best quality conference.&nbsp;
-          <AniLink className="inline-flex items-center justify-center text-primary hover:text-primary-dark" fade to="/about" duration={1}>
-          {/* <a href="#" className="inline-flex items-center justify-center text-primary hover:text-primary-dark"> */}
-            Our sponsors
+          <AniLink className="inline-flex items-center justify-center text-primary hover:text-primary-dark" fade to="/partners" duration={1}>
+            Our partners
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="inline w-3 h-3 ml-1">
               <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
             </svg>
-          {/* </a> */}
           </AniLink>
         </p>
       </section>

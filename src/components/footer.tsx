@@ -26,7 +26,7 @@ const Footer = () => {
           <p className="mb-3 text-xs font-semibold tracking-wider text-gray-400 uppercase">Conference</p>
           <a href="#" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Speakers</a>
           <a href="#" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Workshops</a>
-          <a href="#" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Full Agenda</a>
+          <a href="#" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Full Schedule</a>
           <a href="#" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">FAQs</a>
         </nav>
         <nav className="col-span-1 md:col-span-1 lg:col-span-2">
