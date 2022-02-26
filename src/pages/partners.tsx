@@ -54,13 +54,13 @@ const Partners = () => {
                 />
               </div>
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
-                <img className="max-h-12" src="https://tailwindui.com/img/logos/laravel-logo-gray-400.svg" alt="Laravel" />
+                <img className="max-h-12" src="tba.svg" alt="TBA" />
               </div>
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
                 <img
                   className="max-h-12"
-                  src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
-                  alt="StaticKit"
+                  src="tba.svg"
+                  alt="TBA"
                 />
               </div>
             </div>
