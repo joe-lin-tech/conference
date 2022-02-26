@@ -47,7 +47,11 @@ const Partners = () => {
                 />
               </div>
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
-                <img className="max-h-12" src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg" alt="Tuple" />
+                <img
+                  className="w-full"
+                  src="logos/pcf.png"
+                  alt="Project Code Foundation"
+                />
               </div>
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
                 <img className="max-h-12" src="https://tailwindui.com/img/logos/laravel-logo-gray-400.svg" alt="Laravel" />
