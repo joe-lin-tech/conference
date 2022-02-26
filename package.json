@@ -8,6 +8,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@n8tb1t/use-scroll-position": "^2.0.3",
     "autoprefixer": "^10.4.2",
     "gatsby": "^4.0.0",
     "gatsby-plugin-image": "^2.7.0",

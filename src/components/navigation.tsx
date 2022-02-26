@@ -15,6 +15,7 @@ const Navigation = ({ page }) => {
           <div className="hidden space-x-1 md:inline-flex">
             <AniLink className="btn btn-sm btn-link" fade to="/about" duration={1}>About the Team</AniLink>
             <AniLink className="btn btn-sm btn-link" fade to="/schedule" duration={1}>Conference Schedule</AniLink>
+            <AniLink className="btn btn-sm btn-link" fade to="/sponsors" duration={1}>Sponsors</AniLink>
             <AniLink className="btn btn-sm btn-link" fade to="/partners" duration={1}>Partners</AniLink>
             <AniLink className="btn btn-sm btn-link" fade to="/about" duration={1}>Contact</AniLink>
           </div>
