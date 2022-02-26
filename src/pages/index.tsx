@@ -6,7 +6,6 @@ import PageLayout from "../components/page-layout";
 const Home = () => {
   const stickyRef = useRef(null);
   const canvasRef = useRef(null);
-  const containerRef = useRef(null);
   let context = null;
   const frameCount = 750;
 
@@ -95,18 +94,33 @@ const Home = () => {
             className="w-full rounded-lg shadow-2xl"
           />
         </div>
-        {/* <div className="grid grid-cols-4 gap-10 text-center lg:grid-cols-8">
+        <div className="grid grid-cols-4 gap-10 text-center lg:grid-cols-8">
           <div className="flex items-center justify-center">
-            <img src="/logos/todoist.svg" alt="Todoist Logo" className="block object-contain h-12" />
+            <img src="logos/zadarlabs.png" alt="ZadarLabs Logo" className="block object-contain h-24" />
           </div>
           <div className="flex items-center justify-center">
-            <img src="/logos/slack-icon.svg" alt="Slack Logo" className="block object-contain h-12" />
+            <img src="/logos/beaverworks.svg" alt="MIT Beaverworks Logo" className="block object-contain h-24" />
           </div>
           <div className="flex items-center justify-center">
-            <img src="/logos/typeform.svg" alt="Typeform Logo" className="block object-contain h-12" />
+            <img src="/logos/tba.svg" alt="TBA Logo" className="block object-contain h-24" />
           </div>
-        </div> */}
-        <p className="mt-16 text-base font-medium text-center text-gray-500">
+          <div className="flex items-center justify-center">
+            <img src="/logos/tba.svg" alt="TBA Logo" className="block object-contain h-24" />
+          </div>
+          <div className="flex items-center justify-center">
+            <img src="/logos/tba.svg" alt="TBA Logo" className="block object-contain h-24" />
+          </div>
+          <div className="flex items-center justify-center">
+            <img src="/logos/tba.svg" alt="TBA Logo" className="block object-contain h-24" />
+          </div>
+          <div className="flex items-center justify-center">
+            <img src="/logos/tba.svg" alt="TBA Logo" className="block object-contain h-24" />
+          </div>
+          <div className="flex items-center justify-center">
+            <img src="/logos/tba.svg" alt="TBA Logo" className="block object-contain h-24" />
+          </div>
+        </div>
+        <p className="mt-12 text-base font-medium text-center text-gray-500">
           We've partnered with various industry-leading companies and startups
           to provide you the best quality conference.&nbsp;
           <AniLink
@@ -131,7 +145,7 @@ const Home = () => {
           </AniLink>
         </p>
       </section>
-      <div className="h-[1500vh]">
+      <div className="h-[1850vh]">
         <div ref={stickyRef} className="sticky mt-10 top-0">
           <canvas
             width={1920}

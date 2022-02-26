@@ -1,7 +1,6 @@
 import React from "react";
 import PageLayout from '../components/page-layout';
 import ProfileCard from "../components/profile-card";
-import { StaticImage } from "gatsby-plugin-image";
 
 const About = () => {
   return (
@@ -18,19 +17,105 @@ const About = () => {
             The Conference Team primarily consists of representatives from BSA Troop 452 and PAVE. The team is also composed of various high school and college volunteers.
           </p>
         </div>
-        <div className="grid gap-8 grid-cols-4">
+        <div className="grid gap-2 grid-cols-4">
           <div className="col-start-2">
-            <ProfileCard name="Joe Lin" position="Conference Lead" image={<StaticImage className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300" src="../images/profiles/joe-lin.jpeg" alt="" />} />
+            <ProfileCard
+              name="Joe Lin"
+              position="Conference Lead"
+              url="profiles/joe-lin.jpeg"
+              links={[
+                {
+                  name: "github",
+                  url: "https://github.com/joe-lin-tech",
+                },
+                {
+                  name: "linkedin",
+                  url: "https://www.linkedin.com/in/joe-lin-44956b19a/",
+                },
+                {
+                  name: "facebook",
+                  url: "https://www.facebook.com/joe.lin.2004",
+                }
+              ]}
+            />
           </div>
           <div className="col-end-4">
-            <ProfileCard name="Tabitha Colter" position="Conference Lead" image={<StaticImage className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300" src="../images/profiles/tabitha-colter.jpeg" alt="" />} />
+            <ProfileCard
+              name="Tabitha Colter"
+              position="Conference Lead"
+              url="profiles/tabitha-colter.jpeg"
+              links={[{
+                name: "facebook",
+                url: "https://www.facebook.com",
+              }]}
+            />
           </div>
           <div className="col-start-1">
-            <ProfileCard name="First Last" position="Logistics Lead" image={<StaticImage className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300" src="../images/profiles/joe-lin.jpeg" alt="" />} />
+            <ProfileCard
+              name="Oliver Ni"
+              position="Team Member"
+              url="profiles/oliver-ni.jpg"
+              links={[
+                {
+                  name: "github",
+                  url: "https://github.com/oliver-ni",
+                },
+                {
+                  name: "linkedin",
+                  url: "https://www.linkedin.com/in/oliverni/",
+                },
+                {
+                  name: "facebook",
+                  url: "https://www.facebook.com",
+                }
+              ]}
+            />
           </div>
-          <ProfileCard name="First Last" position="Promotion Lead" image={<StaticImage className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300" src="../images/profiles/joe-lin.jpeg" alt="" />} />
-          <ProfileCard name="First Last" position="Outreach Lead" image={<StaticImage className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300" src="../images/profiles/joe-lin.jpeg" alt="" />} />
-          <ProfileCard name="First Last" position="Response Lead" image={<StaticImage className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300" src="../images/profiles/joe-lin.jpeg" alt="" />} />
+          <ProfileCard
+            name="Sophia Khubchandani"
+            position="Team Member"
+            url="profiles/sophia-khubchandani.jpg"
+            links={[
+              {
+                name: "linkedin",
+                url: "https://www.linkedin.com/in/sophia-khubchandani-407b29221/",
+              },
+              {
+                name: "facebook",
+                url: "https://www.facebook.com",
+              }
+            ]}
+          />
+          <ProfileCard
+            name="Raymond Shao"
+            position="Team Member"
+            url="profiles/raymond-shao.jpg"
+            links={[
+              {
+                name: "linkedin",
+                url: "https://www.linkedin.com",
+              },
+              {
+                name: "facebook",
+                url: "https://www.facebook.com",
+              }
+            ]}
+          />
+          <ProfileCard
+            name="Daniel Yang"
+            position="Team Member"
+            url="profiles/daniel-yang.jpg"
+            links={[
+              {
+                name: "linkedin",
+                url: "https://www.linkedin.com",
+              },
+              {
+                name: "facebook",
+                url: "https://www.facebook.com",
+              }
+            ]}
+          />
         </div>
       </section>
     </PageLayout>
