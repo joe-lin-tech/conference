@@ -53,7 +53,7 @@ const About = () => {
           <div className="col-start-1">
             <ProfileCard
               name="Oliver Ni"
-              position="Team Member"
+              position="Partner Rep & Team Member"
               url="profiles/oliver-ni.jpg"
               links={[
                 {
@@ -71,6 +71,21 @@ const About = () => {
               ]}
             />
           </div>
+          <ProfileCard
+            name="Kento Nishi"
+            position="Partner Rep & Team Member"
+            url="https://lhswebdev.github.io/images/profiles/kento.jpg"
+            links={[
+              {
+                name: "github",
+                url: "",
+              },
+              {
+                name: "linkedin",
+                url: "",
+              }
+            ]}
+          />
           <ProfileCard
             name="Sophia Khubchandani"
             position="Team Member"
@@ -114,6 +129,39 @@ const About = () => {
                 name: "facebook",
                 url: "https://www.facebook.com",
               }
+            ]}
+          />
+          <ProfileCard
+            name="Andrew Yuan"
+            position="Team Member"
+            url="profiles/andrew-yuan.jpg"
+            links={[
+              {
+                name: "linkedin",
+                url: "https://www.linkedin.com",
+              },
+            ]}
+          />
+          <ProfileCard
+            name="Kenneth Kang"
+            position="Team Member"
+            url="profiles/kenneth-kang.jpeg"
+            links={[
+              {
+                name: "linkedin",
+                url: "https://www.linkedin.com/in/kennykennethkkang",
+              },
+            ]}
+          />
+          <ProfileCard
+            name="Steve Yang"
+            position="Team Member"
+            url="profiles/steve-yang.jpg"
+            links={[
+              {
+                name: "linkedin",
+                url: "https://www.linkedin.com",
+              },
             ]}
           />
         </div>
