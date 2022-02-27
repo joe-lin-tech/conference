@@ -61,7 +61,7 @@ const SponsorsPartners = () => {
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
                 <img
                   className="w-full"
-                  src="logos/lynbrookaiml.png"
+                  src="logos/lynbrook-aiml.png"
                   alt="Lynbrook AI/ML Club"
                 />
               </div>
@@ -73,14 +73,14 @@ const SponsorsPartners = () => {
                 />
               </div>
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
-                <img className="max-h-12" src="tba.svg" alt="TBA" />
+                <img
+                  className="h-24"
+                  src="lynbrook-science.jpg"
+                  alt="Lynbrook Science Club"
+                />
               </div>
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
-                <img
-                  className="max-h-12"
-                  src="tba.svg"
-                  alt="TBA"
-                />
+                <img className="max-h-12" src="tba.svg" alt="TBA" />
               </div>
             </div>
           </div>

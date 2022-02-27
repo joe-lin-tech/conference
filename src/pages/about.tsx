@@ -73,7 +73,7 @@ const About = () => {
           </div>
           <ProfileCard
             name="Kento Nishi"
-            position="Partner Rep & Team Member"
+            position="Partner Representative"
             url="https://lhswebdev.github.io/images/profiles/kento.jpg"
             links={[
               {
@@ -83,6 +83,17 @@ const About = () => {
               {
                 name: "linkedin",
                 url: "https://www.linkedin.com/in/kento-nishi-5696ab185/",
+              }
+            ]}
+          />
+          <ProfileCard
+            name="William Huang"
+            position="Partner Representative"
+            url="profiles/william-huang.jpg"
+            links={[
+              {
+                name: "facebook",
+                url: ""
               }
             ]}
           />
@@ -157,6 +168,17 @@ const About = () => {
             name="Steve Yang"
             position="Team Member"
             url="profiles/steve-yang.jpg"
+            links={[
+              {
+                name: "linkedin",
+                url: "https://www.linkedin.com",
+              },
+            ]}
+          />
+          <ProfileCard
+            name="Robert Ji"
+            position="Team Member"
+            url="profiles/placeholder.png"
             links={[
               {
                 name: "linkedin",

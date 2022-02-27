@@ -35,7 +35,7 @@ const Home = () => {
 
   return (
     <PageLayout page="Home">
-      <section className="px-4 py-24 mx-auto max-w-7xl">
+      <section className="px-4 py-20 mx-auto max-w-7xl">
         <div className="w-full mx-auto text-left md:w-11/12 xl:w-9/12 md:text-center">
           <h1 className="mb-6 text-4xl font-extrabold leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight">
             Come to the{" "}
@@ -87,14 +87,7 @@ const Home = () => {
             </a>
           </div>
         </div>
-        <div className="w-full mx-auto mt-20 text-center md:w-10/12">
-          <img
-            src="/hero.jpg"
-            alt=""
-            className="w-full rounded-lg shadow-2xl"
-          />
-        </div>
-        <div className="grid grid-cols-4 gap-10 text-center lg:grid-cols-8">
+        <div className="grid grid-cols-4 gap-10 text-center lg:grid-cols-8 mt-16">
           <div className="flex items-center justify-center">
             <img src="logos/zadarlabs.png" alt="ZadarLabs Logo" className="block object-contain h-24" />
           </div>
