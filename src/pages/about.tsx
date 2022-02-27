@@ -78,11 +78,11 @@ const About = () => {
             links={[
               {
                 name: "github",
-                url: "",
+                url: "https://github.com/KentoNishi",
               },
               {
                 name: "linkedin",
-                url: "",
+                url: "https://www.linkedin.com/in/kento-nishi-5696ab185/",
               }
             ]}
           />
