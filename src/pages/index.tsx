@@ -6,7 +6,8 @@ import PageLayout from "../components/page-layout";
 const Home = () => {
   const stickyRef = useRef(null);
   const canvasRef = useRef(null);
-  const textRef = useRef(null);
+  const engineeringRef = useRef(null);
+  const ethicsRef = useRef(null);
   let context = null;
   const frameCount = 750;
 
@@ -27,19 +28,26 @@ const Home = () => {
       frameCount - 1,
       Math.ceil((scrollFraction * frameCount) / 3)
     );
+
     const animatedImage = new Image();
     animatedImage.src = `/animation/home/out${frameIndex}.jpg`;
     animatedImage.onload = () => {
       context.drawImage(animatedImage, 0, 0);
     };
-    console.log(textRef.current.offsetTop - currY);
-    if (textRef.current.offsetTop - currY > 5000 && textRef.current.offsetTop - currY < 20000) {
-      textRef.current.style.transition = "opacity 0.5s";
-      textRef.current.style.opacity = 1;
+
+    if (engineeringRef.current.offsetTop - currY > 5000 && engineeringRef.current.offsetTop - currY < 20000) {
+      engineeringRef.current.style.transition = "opacity 0.25s";
+      engineeringRef.current.style.opacity = 1;
     } else {
-      textRef.current.style.opacity = 0;
+      engineeringRef.current.style.opacity = 0;
     }
 
+    if (ethicsRef.current.offsetTop - currY > 22000 && ethicsRef.current.offsetTop - currY < 30000) {
+      ethicsRef.current.style.transition = "opacity 0.25s";
+      ethicsRef.current.style.opacity = 1;
+    } else {
+      ethicsRef.current.style.opacity = 0;
+    }
   }, []);
 
   return (
@@ -156,11 +164,18 @@ const Home = () => {
             ref={canvasRef}
           />
         </div>
-        <h1 ref={textRef} className="sticky text-4xl font-bold leading-none tracking-normal text-white md:text-5xl md:tracking-tight top-[15vh] text-center">
+        <h1 ref={engineeringRef} className="sticky text-4xl font-bold leading-none tracking-normal text-white md:text-5xl md:tracking-tight top-[15vh] text-center">
           Discover the engineering behind{" "}
           <span className="block w-full text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 lg:inline">
             automated vehicles.
           </span>
+        </h1>
+        <h1 ref={ethicsRef} className="sticky text-4xl font-bold leading-none tracking-normal text-white md:text-5xl md:tracking-tight top-[15vh] text-right pr-40">
+          And investigate{" "}
+          <span className="block w-full text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 lg:inline">
+            automated<br></br>vehicles'
+          </span>{" "}
+          ethical impacts.
         </h1>
       </div>
     </PageLayout>
