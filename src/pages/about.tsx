@@ -93,7 +93,7 @@ const About = () => {
             links={[
               {
                 name: "facebook",
-                url: ""
+                url: "https://www.facebook.com/",
               }
             ]}
           />
@@ -143,6 +143,17 @@ const About = () => {
             ]}
           />
           <ProfileCard
+            name="Alexander Zhang"
+            position="Team Member"
+            url="profiles/alexander-zhang.jpeg"
+            links={[
+              {
+                name: "linkedin",
+                url: "https://www.linkedin.com/in/alexander-zhang-71303b203/",
+              },
+            ]}
+          />
+          <ProfileCard
             name="Andrew Yuan"
             position="Team Member"
             url="profiles/andrew-yuan.jpg"
@@ -183,6 +194,28 @@ const About = () => {
               {
                 name: "linkedin",
                 url: "https://www.linkedin.com",
+              },
+            ]}
+          />
+          <ProfileCard
+            name="Rohil Shah"
+            position="Team Member"
+            url="profiles/placeholder.png"
+            links={[
+              {
+                name: "github",
+                url: "https://github.com/rohildshah",
+              },
+            ]}
+          />
+          <ProfileCard
+            name="Ivan Lin"
+            position="Team Member"
+            url="profiles/placeholder.png"
+            links={[
+              {
+                name: "linkedin",
+                url: "",
               },
             ]}
           />

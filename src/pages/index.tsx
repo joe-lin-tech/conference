@@ -6,6 +6,7 @@ import PageLayout from "../components/page-layout";
 const Home = () => {
   const stickyRef = useRef(null);
   const canvasRef = useRef(null);
+  const textRef = useRef(null);
   let context = null;
   const frameCount = 750;
 
@@ -31,6 +32,14 @@ const Home = () => {
     animatedImage.onload = () => {
       context.drawImage(animatedImage, 0, 0);
     };
+    console.log(textRef.current.offsetTop - currY);
+    if (textRef.current.offsetTop - currY < 3500) {
+      textRef.current.style.opacity = 0;
+    } else {
+      textRef.current.style.transition = "opacity 0.5s";
+      textRef.current.style.opacity = 1;
+    }
+
   }, []);
 
   return (
@@ -139,7 +148,7 @@ const Home = () => {
         </p>
       </section>
       <div className="h-[1850vh]">
-        <div ref={stickyRef} className="sticky mt-10 top-0">
+        <div ref={stickyRef} className="-z-10 sticky mt-10 top-0">
           <canvas
             width={1920}
             height={1080}
@@ -147,6 +156,12 @@ const Home = () => {
             ref={canvasRef}
           />
         </div>
+        <h1 ref={textRef} className="sticky text-4xl font-bold leading-none tracking-normal text-white md:text-5xl md:tracking-tight top-[15vh] text-center">
+          Discover the engineering behind{" "}
+          <span className="block w-full text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 lg:inline">
+            automated vehicles.
+          </span>
+        </h1>
       </div>
     </PageLayout>
   );
