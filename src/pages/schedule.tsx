@@ -26,12 +26,59 @@ const Schedule = () => {
           </nav>
         </div>
         {tabSelect == 0 && <div className="grid gap-8 grid-cols-3 mt-8">
-          <Session title="Current State-of-the-Art Object Detection Deep Learning Networks" description="TODO" category="Engineering" image="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" />
-          <Session title="Responsibility and Accountability for Automated Vehicles" description="TODO" category="Ethics" image="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" />
-          <Session title="Urban Mobility Policy for Autonomous Vehicles" description="TODO" category="Policy" image="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" />
-          <Session title="Autonomous Vehicle Technology" description="TODO" category="Engineering" image="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" />
-          <Session title="Autonomous Vehicle Technology" description="TODO" category="Engineering" image="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" />
-          <Session title="Autonomous Vehicle Technology" description="TODO" category="Engineering" image="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" />
+          <Session
+            name="Dr. Shu Kong"
+            category="Engineering"
+            title="Open World Visual Perception for Autonomous Driving"
+            description="Explore state-of-the-art techniques for recognizing unknown obstacles when driving in the open world."
+            image="profiles/shu-kong.jpeg"
+            links={[
+              {
+                name: "github",
+                url: "https://github.com/aimerykong",
+              },
+            ]}
+          />
+          <Session
+            name="TBD"
+            category="Engineering"
+            title="Current State-of-the-Art Object Detection Deep Learning Networks"
+            description="TODO"
+            image="profiles/placeholder.png"
+            links={[]}
+          />
+          <Session
+            name="TBD"
+            category="Ethics"
+            title="Responsibility and Accountability for Automated Vehicles"
+            description="TODO"
+            image="profiles/placeholder.png"
+            links={[]}
+          />
+          <Session
+            name="TBD"
+            category="Policy"
+            title="Urban Mobility Policy for Autonomous Vehicles"
+            description="TODO"
+            image="profiles/placeholder.png"
+            links={[]}
+          />
+          <Session
+            name="TBD"
+            category="Engineering"
+            title="Autonomous Vehicle Technology"
+            description="TODO"
+            image="profiles/placeholder.png"
+            links={[]}
+          />
+          <Session
+            name="TBD"
+            category="Engineering"
+            title="Autonomous Vehicle Technology"
+            description="TODO"
+            image="profiles/placeholder.png"
+            links={[]}
+          />
         </div>}
         {tabSelect == 1 && <Timeline />}
       </section>

@@ -18,7 +18,7 @@ const About = () => {
           </p>
         </div>
         <div className="grid gap-2 grid-cols-4">
-          <div className="col-start-2">
+          <div className="col-start-2 col-end-4">
             <ProfileCard
               name="Joe Lin"
               position="Conference Lead"
@@ -37,17 +37,6 @@ const About = () => {
                   url: "https://www.facebook.com/joe.lin.2004",
                 }
               ]}
-            />
-          </div>
-          <div className="col-end-4">
-            <ProfileCard
-              name="Tabitha Colter"
-              position="Conference Lead"
-              url="profiles/tabitha-colter.jpeg"
-              links={[{
-                name: "facebook",
-                url: "https://www.facebook.com",
-              }]}
             />
           </div>
           <div className="col-start-1">

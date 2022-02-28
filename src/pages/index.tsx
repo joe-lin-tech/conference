@@ -11,6 +11,13 @@ const Home = () => {
   let context = null;
   const frameCount = 750;
 
+  const preloadImages = () => {
+    for (let i = 1; i < frameCount; i++) {
+      const img = new Image();
+      img.src = `/animation/home/out${i}.jpg`;
+    }
+  };
+
   useEffect(() => {
     const canvas = canvasRef.current;
     context = canvas.getContext("2d");
@@ -19,6 +26,7 @@ const Home = () => {
     animatedImage.onload = () => {
       context.drawImage(animatedImage, 0, 0);
     };
+    preloadImages();
   }, []);
 
   useScrollPosition(({ currPos }) => {
@@ -42,7 +50,7 @@ const Home = () => {
       engineeringRef.current.style.opacity = 0;
     }
 
-    if (ethicsRef.current.offsetTop - currY > 22000 && ethicsRef.current.offsetTop - currY < 30000) {
+    if (ethicsRef.current.offsetTop - currY > 22000 && ethicsRef.current.offsetTop - currY < 29000) {
       ethicsRef.current.style.transition = "opacity 0.25s";
       ethicsRef.current.style.opacity = 1;
     } else {

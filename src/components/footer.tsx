@@ -8,7 +8,8 @@ const Footer = () => {
       <div className="grid grid-cols-2 gap-10 mb-3 md:grid-cols-3 lg:grid-cols-12 lg:gap-20">
         <div className="col-span-3">
           <AniLink fade to="/" title="Autonomous Vehicle Conference Home Page" className="flex items-center">
-            <StaticImage src="../images/logo-icon.png" alt="Logo" placeholder="none" width={150} />
+            {/* <StaticImage src="../images/logo-icon.png" alt="Logo" placeholder="none" width={150} /> */}
+            <StaticImage src="../images/bsa.png" alt="Logo" placeholder="none" width={45} />
             <span className="sr-only">Autonomous Vehicle</span>
           </AniLink>
           <p className="my-4 text-xs leading-normal text-gray-500">

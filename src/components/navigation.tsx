@@ -8,7 +8,8 @@ const Navigation = ({ page }) => {
     <header className="z-30 w-full px-2 py-4 bg-white sm:px-4">
       <div className="flex items-center justify-between mx-auto max-w-7xl">
         <AniLink fade to="/" title="Autonomous Vehicle Conference Home Page" className="flex items-center">
-          <StaticImage src="../images/logo-icon.png" alt="Logo" placeholder="none" width={150} />
+          {/* <StaticImage src="../images/logo-icon.png" alt="Logo" placeholder="none" width={150} /> */}
+          <StaticImage src="../images/bsa.png" alt="Logo" placeholder="none" width={45} />
           <span className="sr-only">Autonomous Vehicle</span>
         </AniLink>
         <div className="flex items-center space-x-1">
