@@ -33,11 +33,11 @@ const Home = () => {
       context.drawImage(animatedImage, 0, 0);
     };
     console.log(textRef.current.offsetTop - currY);
-    if (textRef.current.offsetTop - currY < 3500) {
-      textRef.current.style.opacity = 0;
-    } else {
+    if (textRef.current.offsetTop - currY > 5000 && textRef.current.offsetTop - currY < 20000) {
       textRef.current.style.transition = "opacity 0.5s";
       textRef.current.style.opacity = 1;
+    } else {
+      textRef.current.style.opacity = 0;
     }
 
   }, []);
