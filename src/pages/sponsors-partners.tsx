@@ -30,10 +30,10 @@ const SponsorsPartners = () => {
                 <img className="h-24" src="logos/zadarlabs.png" alt="ZadarLabs" />
               </div>
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
-                <img className="max-h-12" src="tba.svg" alt="TBA" />
+                <img className="max-h-12" src="logos/beaverworks.jpg" alt="MIT Beaverworks" />
               </div>
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
-                <img className="max-h-12" src="tba.svg" alt="TBA" />
+                <img className="max-h-12" src="logos/cavcoe.jpg" alt="CAVCOE" />
               </div>
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
                 <img className="max-h-12" src="tba.svg" alt="TBA" />

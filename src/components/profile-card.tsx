@@ -11,7 +11,7 @@ const ProfileCard = ({ name, position, url, links }) => {
   return (
     <div className="flex flex-col items-center p-8 transition-colors duration-200 transform cursor-pointer group hover:bg-blue-600 rounded-xl">
       <img className="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300" src={url} alt="" />
-      <h1 className="mt-4 text-2xl font-semibold text-gray-900 capitalize group-hover:text-white">{name}</h1>
+      <h1 className="mt-4 text-2xl font-semibold text-gray-900 capitalize group-hover:text-white text-center">{name}</h1>
       <p className="mt-2 text-gray-500 capitalize group-hover:text-gray-300">{position}</p>
       <div className="flex mt-3 -mx-2">
         {links.map((link) => (

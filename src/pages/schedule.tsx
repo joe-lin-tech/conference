@@ -30,7 +30,13 @@ const Schedule = () => {
             name="Dr. Shu Kong"
             category="Engineering"
             title="Open World Visual Perception for Autonomous Driving"
-            description="Explore state-of-the-art techniques for recognizing unknown obstacles when driving in the open world."
+            description="Visual perception is indispensable in autonomous vehicles. 
+                        Today's visual perception algorithms are often developed under a closed-world paradigm (e.g., training machine-learned models over curated datasets),
+                        which assumes the data distribution and categorical labels are fixed a priori.
+                        This assumption is unrealistic in the real open world, which contains situations that are dynamic and unpredictable.
+                        As a result, closed-world visual perception systems appear to be brittle in the open-world.
+                        For example, autonomous vehicles with such systems could fail to recognize a never-before-seen overturned truck and crash into it.
+                        This talk explores how to detect and recognize unknown objects in the scene."
             image="profiles/shu-kong.jpeg"
             links={[
               {
@@ -40,11 +46,13 @@ const Schedule = () => {
             ]}
           />
           <Session
-            name="TBD"
+            name="Barrie Kirk"
             category="Engineering"
-            title="Current State-of-the-Art Object Detection Deep Learning Networks"
-            description="TODO"
-            image="profiles/placeholder.png"
+            title="Career Opportunities in the CAV Ecosystem"
+            description="The presentation comprises three modules. First, the current status of connected and automated vehicles (CAVs) and the expected deployment trends.
+                        Second, the big picture socio-economic impact on businesses, governments, and our personal lives over the next 20 years.
+                        Third, more focused information on the career opportunities in the CAV ecosystem, including both STEM and non-STEM career paths."
+            image="profiles/barrie-kirk.jpg"
             links={[]}
           />
           <Session

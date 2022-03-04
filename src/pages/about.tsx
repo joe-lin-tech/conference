@@ -17,8 +17,8 @@ const About = () => {
             The Conference Team primarily consists of representatives from BSA Troop 452 and PAVE. The team is also composed of various high school and college volunteers.
           </p>
         </div>
-        <div className="grid gap-2 grid-cols-4">
-          <div className="col-start-2 col-end-4">
+        <div className="grid gap-2 grid-cols-9">
+          <div className="col-start-4 col-end-7">
             <ProfileCard
               name="Joe Lin"
               position="Conference Lead"
@@ -39,6 +39,8 @@ const About = () => {
               ]}
             />
           </div>
+        </div>
+        <div className="grid gap-1 grid-cols-4">
           <div className="col-start-1">
             <ProfileCard
               name="Oliver Ni"
@@ -87,6 +89,17 @@ const About = () => {
             ]}
           />
           <ProfileCard
+            name="Michael Lutz"
+            position="Partner Representative"
+            url="profiles/michael-lutz.jpeg"
+            links={[
+              {
+                name: "linkedin",
+                url: "https://www.linkedin.com/in/michael-lutz-8b3a5817b/",
+              },
+            ]}
+          />
+          <ProfileCard
             name="Sophia Khubchandani"
             position="Team Member"
             url="profiles/sophia-khubchandani.jpg"
@@ -132,6 +145,17 @@ const About = () => {
             ]}
           />
           <ProfileCard
+            name="Ian Chen"
+            position="Team Member"
+            url="profiles/ian-chen.jpg"
+            links={[
+              {
+                name: "linkedin",
+                url: "https://www.linkedin.com/in/iandchen/",
+              },
+            ]}
+          />
+          <ProfileCard
             name="Alexander Zhang"
             position="Team Member"
             url="profiles/alexander-zhang.jpeg"
@@ -139,6 +163,50 @@ const About = () => {
               {
                 name: "linkedin",
                 url: "https://www.linkedin.com/in/alexander-zhang-71303b203/",
+              },
+            ]}
+          />
+          <ProfileCard
+            name="Erin Hsu"
+            position="Team Member"
+            url="profiles/erin-hsu.jpg"
+            links={[
+              {
+                name: "linkedin",
+                url: "",
+              },
+            ]}
+          />
+          <ProfileCard
+            name="Shailesh Senthilkumar"
+            position="Team Member"
+            url="profiles/shailesh-senthilkumar.jpg"
+            links={[
+              {
+                name: "linkedin",
+                url: "https://www.linkedin.com/in/shailesh-senthil/",
+              },
+            ]}
+          />
+          <ProfileCard
+            name="Anton Ouyang"
+            position="Team Member"
+            url="profiles/anton-ouyang.jpg"
+            links={[
+              {
+                name: "linkedin",
+                url: "",
+              },
+            ]}
+          />
+          <ProfileCard
+            name="Kyle He"
+            position="Team Member"
+            url="profiles/kyle-he.jpg"
+            links={[
+              {
+                name: "linkedin",
+                url: "",
               },
             ]}
           />
@@ -172,6 +240,17 @@ const About = () => {
               {
                 name: "linkedin",
                 url: "https://www.linkedin.com",
+              },
+            ]}
+          />
+          <ProfileCard
+            name="Bennie Chang"
+            position="Team Member"
+            url="profiles/bennie-chang.jpg"
+            links={[
+              {
+                name: "linkedin",
+                url: "https://www.linkedin.com/in/bennie-chang/",
               },
             ]}
           />
