@@ -12,6 +12,6 @@ module.exports = {
     },
   },
   plugins: [
-    require("kutty")
+    require("kutty"),
   ],
 }

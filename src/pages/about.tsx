@@ -255,6 +255,17 @@ const About = () => {
             ]}
           />
           <ProfileCard
+            name="Ivan Lin"
+            position="Team Member"
+            url="profiles/placeholder.png"
+            links={[
+              {
+                name: "linkedin",
+                url: "",
+              },
+            ]}
+          />
+          <ProfileCard
             name="Robert Ji"
             position="Team Member"
             url="profiles/placeholder.png"
@@ -273,17 +284,6 @@ const About = () => {
               {
                 name: "github",
                 url: "https://github.com/rohildshah",
-              },
-            ]}
-          />
-          <ProfileCard
-            name="Ivan Lin"
-            position="Team Member"
-            url="profiles/placeholder.png"
-            links={[
-              {
-                name: "linkedin",
-                url: "",
               },
             ]}
           />

@@ -114,28 +114,31 @@ const Home = () => {
         </div>
         <div className="grid grid-cols-4 gap-10 text-center lg:grid-cols-8 mt-16">
           <div className="flex items-center justify-center">
-            <img src="logos/zadarlabs.png" alt="ZadarLabs Logo" className="block object-contain h-24" />
+            <img src="/logos/motional.png" alt="Motional" className="block object-contain h-24" />
           </div>
           <div className="flex items-center justify-center">
-            <img src="/logos/beaverworks.svg" alt="MIT Beaverworks Logo" className="block object-contain h-24" />
+            <img src="logos/zadarlabs.png" alt="ZadarLabs" className="block object-contain h-24" />
+          </div>
+          {/* <div className="flex items-center justify-center">
+            <img src="/logos/beaverworks.png" alt="MIT Beaverworks" className="block object-contain h-24" />
+          </div> */}
+          <div className="flex items-center justify-center">
+            <img src="/logos/cavcoe.jpg" alt="CAVCOE" className="block object-contain h-24" />
           </div>
           <div className="flex items-center justify-center">
-            <img src="/logos/tba.svg" alt="TBA Logo" className="block object-contain h-24" />
+            <img src="https://avatars.githubusercontent.com/u/21328078?s=400&u=ea1dad3556e3d282677babcb2b642e61b8163715&v=4" alt="Lynbrook Computer Science Club" className="block object-contain h-24" />
           </div>
           <div className="flex items-center justify-center">
-            <img src="/logos/tba.svg" alt="TBA Logo" className="block object-contain h-24" />
+            <img src="/logos/lynbrook-aiml.png" alt="Lynbrook AI & Machine Learning Club" className="block object-contain w-full" />
           </div>
           <div className="flex items-center justify-center">
-            <img src="/logos/tba.svg" alt="TBA Logo" className="block object-contain h-24" />
+            <img src="/logos/pcf.png" alt="Project Code Foundation" className="block object-contain w-full" />
           </div>
           <div className="flex items-center justify-center">
-            <img src="/logos/tba.svg" alt="TBA Logo" className="block object-contain h-24" />
+            <img src="/logos/lynbrook-science.jpg" alt="Lynbrook Science Club" className="block object-contain h-24" />
           </div>
           <div className="flex items-center justify-center">
-            <img src="/logos/tba.svg" alt="TBA Logo" className="block object-contain h-24" />
-          </div>
-          <div className="flex items-center justify-center">
-            <img src="/logos/tba.svg" alt="TBA Logo" className="block object-contain h-24" />
+            <img src="/logos/ten80-education.png" alt="Ten80 Education" className="block object-contain w-full" />
           </div>
         </div>
         <p className="mt-12 text-base font-medium text-center text-gray-500">
