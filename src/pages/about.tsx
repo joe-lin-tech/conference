@@ -22,7 +22,7 @@ const About = () => {
             <ProfileCard
               name="Joe Lin"
               position="Conference Lead"
-              url="profiles/joe-lin.jpeg"
+              url="/profiles/joe-lin.jpeg"
               links={[
                 {
                   name: "github",
@@ -45,7 +45,7 @@ const About = () => {
             <ProfileCard
               name="Oliver Ni"
               position="Partner Rep & Team Member"
-              url="profiles/oliver-ni.jpg"
+              url="/profiles/oliver-ni.jpg"
               links={[
                 {
                   name: "github",
@@ -80,7 +80,7 @@ const About = () => {
           <ProfileCard
             name="William Huang"
             position="Partner Representative"
-            url="profiles/william-huang.jpg"
+            url="/profiles/william-huang.jpg"
             links={[
               {
                 name: "facebook",
@@ -91,7 +91,7 @@ const About = () => {
           <ProfileCard
             name="Michael Lutz"
             position="Partner Representative"
-            url="profiles/michael-lutz.jpeg"
+            url="/profiles/michael-lutz.jpeg"
             links={[
               {
                 name: "linkedin",
@@ -102,7 +102,7 @@ const About = () => {
           <ProfileCard
             name="Sophia Khubchandani"
             position="Team Member"
-            url="profiles/sophia-khubchandani.jpg"
+            url="/profiles/sophia-khubchandani.jpg"
             links={[
               {
                 name: "linkedin",
@@ -117,7 +117,7 @@ const About = () => {
           <ProfileCard
             name="Raymond Shao"
             position="Team Member"
-            url="profiles/raymond-shao.jpg"
+            url="/profiles/raymond-shao.jpg"
             links={[
               {
                 name: "linkedin",
@@ -132,7 +132,7 @@ const About = () => {
           <ProfileCard
             name="Daniel Yang"
             position="Team Member"
-            url="profiles/daniel-yang.jpg"
+            url="/profiles/daniel-yang.jpg"
             links={[
               {
                 name: "linkedin",
@@ -147,7 +147,7 @@ const About = () => {
           <ProfileCard
             name="Ian Chen"
             position="Team Member"
-            url="profiles/ian-chen.jpg"
+            url="/profiles/ian-chen.jpg"
             links={[
               {
                 name: "linkedin",
@@ -158,7 +158,7 @@ const About = () => {
           <ProfileCard
             name="Alexander Zhang"
             position="Team Member"
-            url="profiles/alexander-zhang.jpeg"
+            url="/profiles/alexander-zhang.jpeg"
             links={[
               {
                 name: "linkedin",
@@ -169,7 +169,7 @@ const About = () => {
           <ProfileCard
             name="Erin Hsu"
             position="Team Member"
-            url="profiles/erin-hsu.jpg"
+            url="/profiles/erin-hsu.jpg"
             links={[
               {
                 name: "linkedin",
@@ -180,7 +180,7 @@ const About = () => {
           <ProfileCard
             name="Shailesh Senthilkumar"
             position="Team Member"
-            url="profiles/shailesh-senthilkumar.jpg"
+            url="/profiles/shailesh-senthilkumar.jpg"
             links={[
               {
                 name: "linkedin",
@@ -191,7 +191,7 @@ const About = () => {
           <ProfileCard
             name="Anton Ouyang"
             position="Team Member"
-            url="profiles/anton-ouyang.jpg"
+            url="/profiles/anton-ouyang.jpg"
             links={[
               {
                 name: "linkedin",
@@ -202,7 +202,7 @@ const About = () => {
           <ProfileCard
             name="Kyle He"
             position="Team Member"
-            url="profiles/kyle-he.jpg"
+            url="/profiles/kyle-he.jpg"
             links={[
               {
                 name: "linkedin",
@@ -213,7 +213,7 @@ const About = () => {
           <ProfileCard
             name="Andrew Yuan"
             position="Team Member"
-            url="profiles/andrew-yuan.jpg"
+            url="/profiles/andrew-yuan.jpg"
             links={[
               {
                 name: "linkedin",
@@ -224,7 +224,7 @@ const About = () => {
           <ProfileCard
             name="Kenneth Kang"
             position="Team Member"
-            url="profiles/kenneth-kang.jpeg"
+            url="/profiles/kenneth-kang.jpeg"
             links={[
               {
                 name: "linkedin",
@@ -235,7 +235,7 @@ const About = () => {
           <ProfileCard
             name="Steve Yang"
             position="Team Member"
-            url="profiles/steve-yang.jpg"
+            url="/profiles/steve-yang.jpg"
             links={[
               {
                 name: "linkedin",
@@ -246,7 +246,7 @@ const About = () => {
           <ProfileCard
             name="Bennie Chang"
             position="Team Member"
-            url="profiles/bennie-chang.jpg"
+            url="/profiles/bennie-chang.jpg"
             links={[
               {
                 name: "linkedin",
@@ -257,7 +257,7 @@ const About = () => {
           <ProfileCard
             name="Ivan Lin"
             position="Team Member"
-            url="profiles/placeholder.png"
+            url="/profiles/placeholder.png"
             links={[
               {
                 name: "linkedin",
@@ -268,7 +268,7 @@ const About = () => {
           <ProfileCard
             name="Robert Ji"
             position="Team Member"
-            url="profiles/placeholder.png"
+            url="/profiles/placeholder.png"
             links={[
               {
                 name: "linkedin",
@@ -279,7 +279,7 @@ const About = () => {
           <ProfileCard
             name="Rohil Shah"
             position="Team Member"
-            url="profiles/placeholder.png"
+            url="/profiles/placeholder.png"
             links={[
               {
                 name: "github",
