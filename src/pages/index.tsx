@@ -76,7 +76,7 @@ const Home = () => {
           <div className="mb-4 space-x-0 md:space-x-2 md:mb-8">
             <a
               className="inline-flex items-center justify-center w-full mb-2 btn btn-primary btn-lg sm:w-auto sm:mb-0"
-              href="#"
+              href="/auth"
             >
               Register
               <svg
@@ -94,7 +94,7 @@ const Home = () => {
             </a>
             <a
               className="inline-flex items-center justify-center w-full mb-2 btn btn-light btn-lg sm:w-auto sm:mb-0"
-              href="#"
+              href="/schedule"
             >
               View Conference
               <svg
@@ -126,7 +126,7 @@ const Home = () => {
             <img src="/logos/cavcoe.jpg" alt="CAVCOE" className="block object-contain h-24" />
           </div>
           <div className="flex items-center justify-center">
-            <img src="https://avatars.githubusercontent.com/u/21328078?s=400&u=ea1dad3556e3d282677babcb2b642e61b8163715&v=4" alt="Lynbrook Computer Science Club" className="block object-contain h-24" />
+            <img src="/logos/inspirit-ai.png" alt="Inspirit AI" className="block object-contain h-24" />
           </div>
           <div className="flex items-center justify-center">
             <img src="/logos/lynbrook-aiml.png" alt="Lynbrook AI & Machine Learning Club" className="block object-contain w-full" />
@@ -134,8 +134,11 @@ const Home = () => {
           <div className="flex items-center justify-center">
             <img src="/logos/pcf.png" alt="Project Code Foundation" className="block object-contain w-full" />
           </div>
+          {/* <div className="flex items-center justify-center">
+            <img src="https://avatars.githubusercontent.com/u/21328078?s=400&u=ea1dad3556e3d282677babcb2b642e61b8163715&v=4" alt="Lynbrook Computer Science Club" className="block object-contain h-24" />
+          </div> */}
           <div className="flex items-center justify-center">
-            <img src="/logos/lynbrook-science.jpg" alt="Lynbrook Science Club" className="block object-contain h-24" />
+            <img src="/logos/lynbrook-robotics.png" alt="Lynbrook Robotics Club" className="block object-contain h-24" />
           </div>
           <div className="flex items-center justify-center">
             <img src="/logos/ten80-education.png" alt="Ten80 Education" className="block object-contain w-full" />
@@ -147,7 +150,7 @@ const Home = () => {
           <AniLink
             className="inline-flex items-center justify-center text-primary hover:text-primary-dark"
             fade
-            to="/sponsors"
+            to="/sponsors-partners"
             duration={1}
           >
             Our sponsors

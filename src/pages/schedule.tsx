@@ -16,7 +16,7 @@ const Schedule = () => {
             <span className="inline-block w-1 h-1 bg-blue-500 rounded-full"></span>
           </div>
           <p className="mt-6 text-lg text-center text-gray-600 md:text-xl lg:px-24">
-            Here's what to look forward to at our autonomous vehicle national conference! Use the attached zoom links to join the respective sessions on the conference day!
+            Here's what to look forward to at our autonomous vehicle national conference! Click each card to learn more about the content of each session and workshop!
           </p>
         </div>
         <div className="space-y-2">
@@ -88,12 +88,7 @@ const Schedule = () => {
                         These are all examples of artificial intelligence, or computers becoming as “smart” as humans. In this talk, we will begin by taking a look at all the ways that AI influences the way we navigate the world,
                         peek under the hood to see how machine learning works, and offer insight into how young learners play a key role in creating ethical and responsible technology."
             image="/profiles/emmy-li.jpeg"
-            links={[
-              {
-                name: "github",
-                url: "",
-              },
-            ]}
+            links={[]}
           />
           <Session
             name="Kurt Fredland"
@@ -106,12 +101,7 @@ const Schedule = () => {
                         Zadar has developed an end-to-end software-defined 4D imaging radar solution by combining the latest signal processing techniques and machine learning and AI algorithms to achieve superior perception performance.
                         Join this session to understand Zadar's approach to developing their novel perception solution and how their high-performance portfolio of software-defined 4D imaging radar products enable advanced autonomous vehicles of the future."
             image="/profiles/placeholder.png"
-            links={[
-              {
-                name: "github",
-                url: "",
-              },
-            ]}
+            links={[]}
           />
           <Session
             name="TBD"

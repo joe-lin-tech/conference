@@ -7,7 +7,7 @@ const Navigation = ({ page }) => {
   return (
     <header className="z-30 w-full px-2 py-4 bg-white sm:px-4">
       <div className="flex items-center justify-between mx-auto max-w-7xl">
-        <AniLink fade to="/" title="Autonomous Vehicle Conference Home Page" className="flex items-center">
+        <AniLink fade to="/" title="Autonomous Vehicle Conference Home Page" className="flex items-center" duration={1}>
           {/* <StaticImage src="../images/logo-icon.png" alt="Logo" placeholder="none" width={150} /> */}
           <StaticImage src="../images/bsa.png" alt="Logo" placeholder="none" width={45} />
           <span className="sr-only">Autonomous Vehicle</span>
@@ -17,7 +17,7 @@ const Navigation = ({ page }) => {
             <AniLink className="btn btn-sm btn-link" fade to="/about" duration={1}>About the Team</AniLink>
             <AniLink className="btn btn-sm btn-link" fade to="/schedule" duration={1}>Conference Schedule</AniLink>
             <AniLink className="btn btn-sm btn-link" fade to="/sponsors-partners" duration={1}>Sponsors + Partners</AniLink>
-            <AniLink className="btn btn-sm btn-link" fade to="/about" duration={1}>Contact</AniLink>
+            <AniLink className="btn btn-sm btn-link" fade to="/contact" duration={1}>Contact</AniLink>
           </div>
           <AniLink className="btn btn-sm btn-primary" fade to="/auth" duration={1}>Register</AniLink>
           <div className="inline-flex md:hidden" x-data="{ open: false }">
@@ -39,7 +39,7 @@ const Navigation = ({ page }) => {
               </svg>
               <span className="sr-only">Open Menu</span>
             </button>
-            <div className="absolute top-0 left-0 right-0 z-50 flex flex-col p-2 pb-4 m-2 space-y-3 bg-white rounded shadow" x-cloak>
+            <div className="relative top-0 left-0 right-0 z-50 flex flex-col p-2 pb-4 m-2 space-y-3 bg-white rounded shadow" x-cloak>
               <button className="self-end flex-none px-2 ml-2 btn btn-link btn-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -58,11 +58,10 @@ const Navigation = ({ page }) => {
                 </svg>
                 <span className="sr-only">Close Menu</span>
               </button>
-              <a href="#" className="w-full btn btn-link">Features</a>
-              <a href="#" className="w-full btn btn-link">Pricing</a>
-              <a href="#" className="w-full btn btn-link">Blog</a>
-              <a href="#" className="w-full btn btn-link">Company</a>
-              <a href="#" className="w-full btn btn-link">Sign in</a>
+              <AniLink className="btn btn-sm btn-link" fade to="/about" duration={1}>About the Team</AniLink>
+              <AniLink className="btn btn-sm btn-link" fade to="/schedule" duration={1}>Conference Schedule</AniLink>
+              <AniLink className="btn btn-sm btn-link" fade to="/sponsors-partners" duration={1}>Sponsors + Partners</AniLink>
+              <AniLink className="btn btn-sm btn-link" fade to="/contact" duration={1}>Contact</AniLink>
             </div>
           </div>
         </div>

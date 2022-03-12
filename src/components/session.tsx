@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Avatar from "react-avatar";
-import { FaGithub, FaLinkedin, FaFacebook, FaEllipsisH } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaFacebook, FaEllipsisH, FaArrowCircleRight } from "react-icons/fa";
 
 const LinkIcons = {
   github: <FaGithub className="w-4 h-4 fill-current" />,
@@ -25,7 +25,7 @@ const Session = ({ name, category, title, description, image, links }) => {
                 <span className="px-3 py-1 text-xs text-blue-800 uppercase bg-blue-200 rounded-full dark:bg-blue-300 dark:text-blue-900">{category}</span>
                 <div className="flex items-center justify-start">
                   {links.map((link) => (
-                    <a href={link.url} className="mr-2 text-gray-800 cursor-pointer dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+                    <a href={link.url} target="_blank" className="mr-2 text-gray-800 cursor-pointer dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                       aria-label={link.name}>
                       {LinkIcons[link.name]}
                     </a>
@@ -41,7 +41,8 @@ const Session = ({ name, category, title, description, image, links }) => {
               </div>
             </div>
             <a className="flex justify-center cursor-pointer" onClick={() => setShowModal(true)}>
-              <FaEllipsisH className="w-4 h-4 fill-current" />
+              {/* <FaEllipsisH className="w-4 h-4 fill-current" /> */}
+              <FaArrowCircleRight className="w-6 h-6 fill-current" />
             </a>
             {showModal && (
               <>

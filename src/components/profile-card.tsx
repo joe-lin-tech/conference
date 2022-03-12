@@ -15,7 +15,7 @@ const ProfileCard = ({ name, position, url, links }) => {
       <p className="mt-2 text-gray-500 capitalize group-hover:text-gray-300">{position}</p>
       <div className="flex mt-3 -mx-2">
         {links.map((link) => (
-          <a href={link.url} className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
+          <a href={link.url} target="_blank" className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white"
             aria-label={link.name}>
             {LinkIcons[link.name]}
           </a>
