@@ -4,7 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import { useAuthState } from '../hooks/firebase';
 
 const Navigation = ({ page }) => {
-  const [user, loading, error] = useAuthState()
+  // const [user, loading, error] = useAuthState()
   return (
     <header className="z-30 w-full px-2 py-4 bg-white sm:px-4">
       <div className="flex items-center justify-between mx-auto max-w-7xl">
@@ -21,7 +21,8 @@ const Navigation = ({ page }) => {
             <AniLink className="btn btn-sm btn-link" fade to="/sponsors-partners" duration={1}>Sponsors + Partners</AniLink>
             <AniLink className="btn btn-sm btn-link" fade to="/contact" duration={1}>Contact</AniLink>
           </div>
-          <AniLink className="btn btn-sm btn-primary" fade to={user ? "/account" : "/auth"} duration={1}>{user ? "My Account" : "Register"}</AniLink>
+          <AniLink className="btn btn-sm btn-primary" fade to="/auth" duration={1}>Register</AniLink>
+          {/* <AniLink className="btn btn-sm btn-primary" fade to={user ? "/account" : "/auth"} duration={1}>{user ? "My Account" : "Register"}</AniLink> */}
           <div className="inline-flex md:hidden" x-data="{ open: false }">
             <button className="flex-none px-2 btn btn-link btn-sm">
               <svg

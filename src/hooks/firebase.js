@@ -1,13 +1,11 @@
-// import { app } from "../../firebase.js";
-import { getFirebase } from "../../firebase.js";
+import { app } from "../../firebase.js";
 import { getAuth } from "firebase/auth"
 import { getFirestore, collection as firestoreCollection, doc, getDoc } from "firebase/firestore"
 import { useAuthState as getAuthState } from 'react-firebase-hooks/auth';
 import { useCollection as getCollection } from 'react-firebase-hooks/firestore';
 
 export const useAuth = () => {
-    // return getAuth(app)
-    return getAuth(getFirebase())
+    return getAuth(app)
 }
 
 export const useAuthState = () => {
@@ -15,8 +13,7 @@ export const useAuthState = () => {
 }
 
 export const useFirestore = () => {
-    // return getFirestore(app)
-    return getFirestore(getFirebase())
+    return getFirestore(app)
 }
 
 export const useCollection = (collection) => {
