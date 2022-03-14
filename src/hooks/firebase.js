@@ -9,6 +9,7 @@ export const useAuth = () => {
 }
 
 export const useAuthState = () => {
+    console.log("useAuthState", getAuth(app))
     return getAuthState(useAuth())
 }
 
