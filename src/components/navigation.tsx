@@ -1,7 +1,7 @@
 import React from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { StaticImage } from "gatsby-plugin-image"
-import { useAuthState } from '../hooks/firebase';
+// import { useAuthState } from '../hooks/firebase';
 
 const Navigation = ({ page }) => {
   // const [user, loading, error] = useAuthState()
