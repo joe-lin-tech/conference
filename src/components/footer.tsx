@@ -9,7 +9,8 @@ const Footer = () => {
         <div className="col-span-3">
           <AniLink fade to="/" title="Autonomous Vehicle Conference Home Page" className="flex items-center">
             {/* <StaticImage src="../images/logo-icon.png" alt="Logo" placeholder="none" width={150} /> */}
-            <StaticImage src="../images/bsa.png" alt="Logo" placeholder="none" width={45} />
+            {/* <StaticImage src="../images/bsa.png" alt="Logo" placeholder="none" width={45} /> */}
+            <StaticImage src="../images/logo.jpg" alt="Logo" placeholder="none" width={55} />
             <span className="sr-only">Autonomous Vehicle</span>
           </AniLink>
           <p className="my-4 text-xs leading-normal text-gray-500">
@@ -25,24 +26,24 @@ const Footer = () => {
         </div>
         <nav className="col-span-1 md:col-span-1 lg:col-span-2">
           <p className="mb-3 text-xs font-semibold tracking-wider text-gray-400 uppercase">Conference</p>
-          <a href="#" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Speakers</a>
-          <a href="#" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Workshops</a>
-          <a href="#" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Full Schedule</a>
+          <AniLink fade to="/schedule" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Speakers</AniLink>
+          <AniLink fade to="/schedule" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Workshops</AniLink>
+          <AniLink fade to="/schedule" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Full Schedule</AniLink>
           <a href="#" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">FAQs</a>
         </nav>
         <nav className="col-span-1 md:col-span-1 lg:col-span-2">
           <p className="mb-3 text-xs font-semibold tracking-wider text-gray-400 uppercase">About</p>
-          <a href="#" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Conference Team</a>
-          <a href="#" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Sponsors</a>
-          <a href="#" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Partnerships</a>
+          <AniLink fade to="/about" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Conference Team</AniLink>
+          <AniLink fade to="/sponsors-partners" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Sponsors</AniLink>
+          <AniLink fade to="/sponsors-partners" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Partnerships</AniLink>
           <a href="#" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Blog</a>
         </nav>
         <nav className="col-span-2 md:col-span-1 lg:col-span-2">
           <p className="mb-3 text-xs font-semibold tracking-wider text-gray-400 uppercase">Contact</p>
           <a href="#" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Twitter</a>
-          <a href="#" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Instagram</a>
-          <a href="#" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Email</a>
-          <a href="#" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Chat</a>
+          <a href="https://www.instagram.com/avexpo22/" target="_blank" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Instagram</a>
+          <a href="mailto: info@avexpo.org" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Email</a>
+          <a href="#" target="_blank" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Chat</a>
         </nav>
         <div className="col-span-3">
           <p className="mb-3 text-xs font-semibold tracking-wider text-gray-400 uppercase">SUBSCRIBE TO OUR NEWSLETTER</p>
@@ -56,7 +57,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex flex-col items-start justify-between pt-10 mt-10 border-t border-gray-100 md:flex-row md:items-center">
-        <p className="mb-6 text-sm text-left text-gray-600 md:mb-0">Hosted by BSA Troop 452 and Partners for Automated Vehicle Education.</p>
+        <p className="mb-6 text-sm text-left text-gray-600 md:mb-0">Hosted by BSA Troop 452 with Partners for Automated Vehicle Education as the benificiary.</p>
         <div className="flex items-start justify-start space-x-6 md:items-center md:justify-center">
           <a href="#" className="text-sm text-gray-600 transition hover:text-primary">Terms</a>
           <a href="#" className="text-sm text-gray-600 transition hover:text-primary">Privacy</a>

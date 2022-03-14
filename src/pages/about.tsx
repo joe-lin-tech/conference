@@ -14,7 +14,7 @@ const About = () => {
             <span className="inline-block w-1 h-1 bg-blue-500 rounded-full"></span>
           </div>
           <p className="mt-6 text-lg text-center text-gray-600 md:text-xl lg:px-24">
-            The Conference Team primarily consists of representatives from BSA Troop 452 and PAVE. The team is also composed of various high school and college volunteers.
+            The Conference Team primarily consists of representatives from BSA Troop 452. The team is also composed of various high school and college volunteers.
           </p>
         </div>
         <div className="grid gap-2 grid-cols-9">

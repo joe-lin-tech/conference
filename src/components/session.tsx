@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Avatar from "react-avatar";
-import { FaGithub, FaLinkedin, FaFacebook, FaEllipsisH, FaArrowCircleRight } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaFacebook, FaArrowCircleRight } from "react-icons/fa";
 
 const LinkIcons = {
   github: <FaGithub className="w-4 h-4 fill-current" />,

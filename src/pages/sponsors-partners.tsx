@@ -89,6 +89,13 @@ const SponsorsPartners = () => {
                   alt="Lynbrook Robotics"
                 />
               </div>
+              <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
+                <img
+                  className="h-24"
+                  src="/logos/smlc.png"
+                  alt="SMLC"
+                />
+              </div>
             </div>
           </div>
         </div>}
