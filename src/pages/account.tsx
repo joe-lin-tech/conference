@@ -35,7 +35,7 @@ const sessions = [
 ]
 
 const Account = () => {
-  navigate('/')
+  // navigate('/')
   return <div></div>
   // const auth = useAuth()
   // const [user, loading, error] = useAuthState(auth)
