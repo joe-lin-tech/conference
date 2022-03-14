@@ -102,6 +102,14 @@ const Schedule = () => {
             links={[]}
           />
           <Session
+            name="Miguel D. Acosta - California Department of Motor Vehicles (Autonomous Vehicles Branch)"
+            category="Policymaking"
+            title="Autonomous Vehicles Program Overview - California Department of Motor Vehicles"
+            description="Overview of California’s regulatory framework for testing and deployment of Autonomous Vehicles"
+            image="/profiles/miguel-acosta.jpg"
+            links={[]}
+          />
+          <Session
             name="Kurt Fredland"
             category="Engineering"
             title="Advancing Autonomous Perception with 4D Imaging Radar"
@@ -111,14 +119,6 @@ const Schedule = () => {
                         Additionally, advanced perception requirements for autonomous driving demands novel software algorithms and machine learning and AI techniques to process high resolution radar data.
                         Zadar has developed an end-to-end software-defined 4D imaging radar solution by combining the latest signal processing techniques and machine learning and AI algorithms to achieve superior perception performance.
                         Join this session to understand Zadar's approach to developing their novel perception solution and how their high-performance portfolio of software-defined 4D imaging radar products enable advanced autonomous vehicles of the future."
-            image="/profiles/placeholder.png"
-            links={[]}
-          />
-          <Session
-            name="TBD"
-            category="Engineering"
-            title="Autonomous Vehicle Technology"
-            description="TODO"
             image="/profiles/placeholder.png"
             links={[]}
           />

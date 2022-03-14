@@ -2,40 +2,40 @@ import React from "react";
 import PageLayout from '../components/page-layout';
 import { StaticImage } from "gatsby-plugin-image";
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-import { useAuth, useFirestore } from "../hooks/firebase"
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth"
-import { doc, setDoc } from "firebase/firestore"
-import { navigate } from "gatsby";
+// import { useAuth, useFirestore } from "../hooks/firebase"
+// import { signInWithPopup, GoogleAuthProvider } from "firebase/auth"
+// import { doc, setDoc } from "firebase/firestore"
+// import { navigate } from "gatsby";
 
 const signUpWithGoogle = () => {
-  const auth = useAuth()
-  const provider = new GoogleAuthProvider()
-  signInWithPopup(auth, provider)
-    .then(async (result) => {
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-      // The signed-in user info.
-      const user = result.user;
-      const firestore = useFirestore()
-      console.log(user)
-      await setDoc(doc(firestore, "users", user.uid), {
-        displayName: user.displayName,
-        email: user.email,
-        photoURL: user.photoURL,
-      })
-      navigate("/account")
-      // ...
-    }).catch((error) => {
-      // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // The email of the user's account used.
-      const email = error.email;
-      // The AuthCredential type that was used.
-      const credential = GoogleAuthProvider.credentialFromError(error);
-      // ...
-    });
+  // const auth = useAuth()
+  // const provider = new GoogleAuthProvider()
+  // signInWithPopup(auth, provider)
+  //   .then(async (result) => {
+  //     // This gives you a Google Access Token. You can use it to access the Google API.
+  //     const credential = GoogleAuthProvider.credentialFromResult(result);
+  //     const token = credential.accessToken;
+  //     // The signed-in user info.
+  //     const user = result.user;
+  //     const firestore = useFirestore()
+  //     console.log(user)
+  //     await setDoc(doc(firestore, "users", user.uid), {
+  //       displayName: user.displayName,
+  //       email: user.email,
+  //       photoURL: user.photoURL,
+  //     })
+  //     navigate("/account")
+  //     // ...
+  //   }).catch((error) => {
+  //     // Handle Errors here.
+  //     const errorCode = error.code;
+  //     const errorMessage = error.message;
+  //     // The email of the user's account used.
+  //     const email = error.email;
+  //     // The AuthCredential type that was used.
+  //     const credential = GoogleAuthProvider.credentialFromError(error);
+  //     // ...
+  //   });
 }
 
 const Auth = () => {
@@ -86,7 +86,7 @@ const Auth = () => {
         <div className="px-4 py-20 space-y-10 xl:py-32 md:px-40 lg:px-20 xl:px-40">
           <AniLink fade to="/" title="Autonomous Vehicle Conference Home Page" className="flex items-center">
             {/* <StaticImage src="../images/logo-icon.png" alt="Logo" placeholder="none" width={150} /> */}
-            <StaticImage src="../images/logo.jpg" alt="Logo" placeholder="none" width={55} />
+            <StaticImage src="../images/logo.jpg" alt="Logo" placeholder="none" width={60} />
             <span className="sr-only">Autonomous Vehicle</span>
           </AniLink>
           <div className="flex space-x-3">
