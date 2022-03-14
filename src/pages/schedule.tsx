@@ -59,6 +59,17 @@ const Schedule = () => {
             ]}
           />
           <Session
+            name="Yifang Xu - Engineering Manager (Perception for Autonomous Driving) at NVIDIA"
+            category="Engineering"
+            title="Nvidia’s AI Infrastructure For Self-Driving Vehicles"
+            description="Nvidia is dedicated to creating software-defined autonomous vehicles.
+                        This presentation explains Nvidia’s AI infrastructure for creating self-driving cars. 
+                        After attending this session, audiences will have an overview of Nvidia’s AI infrastructure for self-driving cars.
+                        The presenter hopes to inspire audiences to be aware of the challenges of building a production platform for autonomous vehicles."
+            image="/profiles/yifang-xu.jpg"
+            links={[]}
+          />
+          <Session
             name="Barrie Kirk - Co-Founder and Executive Director of CAVCOE (Canadian Automated Vehicles Center of Excellence)"
             category="Engineering"
             title="Career Opportunities in the CAV Ecosystem"
