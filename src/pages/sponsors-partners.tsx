@@ -41,6 +41,11 @@ const SponsorsPartners = () => {
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
                 <img className="w-full" src="/logos/inspirit-ai.png" alt="Inspirit AI" />
               </div>
+              <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
+                <a href="https://stickermule.com" target="_blank">
+                  <img className="h-24" src="/logos/sticker-mule.png" alt="StickerMule" />
+                </a>
+              </div>
             </div>
           </div>
         </div>}
@@ -94,6 +99,13 @@ const SponsorsPartners = () => {
                   className="h-24"
                   src="/logos/smlc.png"
                   alt="SMLC"
+                />
+              </div>
+              <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
+                <img
+                  className="h-24"
+                  src="/logos/lynbrook-engineering.png"
+                  alt="Lynbrook Engineering"
                 />
               </div>
             </div>
