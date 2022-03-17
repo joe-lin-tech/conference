@@ -67,7 +67,7 @@ const Home = () => {
             <span className="block w-full text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 lg:inline">
               autonomous vehicle
             </span>{" "}
-            conference to learn about its engineering, ethics, and policymaking.
+            conference + hackathon event<br/>to learn about its engineering, ethics, and policymaking.
           </h1>
           <p className="px-0 mb-6 text-lg text-gray-600 md:text-xl lg:px-24">
             The National Autonomous Vehicle Conference is a unique opportunity
