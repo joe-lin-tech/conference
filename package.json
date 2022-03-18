@@ -10,7 +10,7 @@
   "dependencies": {
     "@n8tb1t/use-scroll-position": "^2.0.3",
     "autoprefixer": "^10.4.2",
-    "firebase": "^9.6.8",
+    "firebase": "^9.6.9",
     "gatsby": "^4.0.0",
     "gatsby-plugin-image": "^2.7.0",
     "gatsby-plugin-postcss": "^5.7.0",

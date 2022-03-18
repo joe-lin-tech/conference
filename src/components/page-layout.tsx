@@ -2,6 +2,7 @@ import React from "react";
 import '../styles/global.css';
 import Footer from "./footer";
 import Navigation from './navigation';
+import { app } from "../../firebase";
 
 const PageLayout = ({ page, children }) => {
   return (
