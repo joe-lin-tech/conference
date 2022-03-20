@@ -2,6 +2,7 @@ import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import React, { useEffect, useRef } from "react";
 import PageLayout from "../components/page-layout";
+import { useAuthState } from "../hooks/firebase";
 
 const Home = () => {
   const stickyRef = useRef(null);
@@ -10,6 +11,7 @@ const Home = () => {
   const ethicsRef = useRef(null);
   let context = null;
   const frameCount = 750;
+  const [user, loading, error] = useAuthState();
 
   const preloadImages = () => {
     for (let i = 1; i < frameCount; i++) {
@@ -76,7 +78,7 @@ const Home = () => {
           <div className="mb-4 space-x-0 md:space-x-2 md:mb-8">
             <a
               className="inline-flex items-center justify-center w-full mb-2 btn btn-primary btn-lg sm:w-auto sm:mb-0"
-              href="/auth"
+              href={user ? "/account" : "/auth"}
             >
               Register
               <svg

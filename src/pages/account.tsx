@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import PageLayout from '../components/page-layout';
 import { FaCalendar } from "react-icons/fa";
 import { navigate } from "gatsby";
-import { useAuth, useUser, useAuthState } from "../hooks/firebase"
+import { auth } from "../../firebase";
+import { useUser, useAuthState } from "../hooks/firebase"
 import { signOut } from "firebase/auth"
-// import { useAuthState } from "react-firebase-hooks/auth";
 import { useEffect } from "react";
 
 const sessions = [
@@ -35,7 +35,6 @@ const sessions = [
 ]
 
 const Account = () => {
-  // const auth = useAuth()
   const [user, loading, error] = useAuthState()
   const [userData, setUserData] = useState(null)
 
@@ -52,7 +51,6 @@ const Account = () => {
   }, [user, loading])
 
   const logOut = () => {
-    const auth = useAuth()
     signOut(auth).then(() => {
       // Sign-out successful.
       navigate("/auth")
@@ -61,6 +59,8 @@ const Account = () => {
       console.log("ERROR: ", error)
     });
   }
+
+  if (loading) return <div></div>
 
   return (
     <PageLayout page="Account">
@@ -116,8 +116,12 @@ const Account = () => {
                       <dd className="mt-1 text-sm text-gray-900">2022 National Autonomous Vehicle Expo</dd>
                     </div>
                     <div className="sm:col-span-1">
-                      <dt className="text-sm font-medium text-gray-500">Email address</dt>
+                      <dt className="text-sm font-medium text-gray-500">Email Address</dt>
                       <dd className="mt-1 text-sm text-gray-900">{userData?.email}</dd>
+                    </div>
+                    <div className="sm:col-span-1">
+                      <dt className="text-sm font-medium text-gray-500">T-shirt Size</dt>
+                      <dd className="mt-1 text-sm text-gray-900">{userData?.size}</dd>
                     </div>
                     <div className="sm:col-span-1">
                       <dt className="text-sm font-medium text-gray-500">Expo Reward Points</dt>
@@ -137,7 +141,6 @@ const Account = () => {
                 </div>
                 <div>
                   <a
-                    href="#"
                     className="block bg-gray-50 text-sm font-medium text-gray-500 text-center px-4 py-4 hover:text-gray-700 sm:rounded-b-lg"
                   >
                     Add Profile Information
@@ -153,7 +156,6 @@ const Account = () => {
                 Timeline
               </h2>
 
-              {/* Activity Feed */}
               <div className="mt-6 flow-root">
                 <ul role="list" className="-mb-8">
                   {sessions.map((s, i) => (
