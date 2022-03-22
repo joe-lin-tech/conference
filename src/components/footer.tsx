@@ -42,7 +42,7 @@ const Footer = () => {
           <p className="mb-3 text-xs font-semibold tracking-wider text-gray-400 uppercase">Contact</p>
           <a href="#" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Twitter</a>
           <a href="https://www.instagram.com/avexpo22/" target="_blank" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Instagram</a>
-          <a href="mailto: info@avexpo.org" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Email</a>
+          <a href="mailto:info@avexpo.org" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Email</a>
           <a href="#" target="_blank" className="flex mb-3 text-sm font-medium text-gray-800 transition md:mb-2 hover:text-primary">Chat</a>
         </nav>
         <div className="col-span-3">

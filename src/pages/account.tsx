@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import PageLayout from '../components/page-layout';
 import { FaCalendar } from "react-icons/fa";
 import { navigate } from "gatsby";
-import { auth } from "../../firebase";
+import { auth, firestore } from "../../firebase";
 import { useUser, useAuthState } from "../hooks/firebase"
 import { signOut } from "firebase/auth"
 import { useEffect } from "react";
+import { doc, updateDoc } from "firebase/firestore"
 
 const sessions = [
   {
@@ -37,18 +38,31 @@ const sessions = [
 const Account = () => {
   const [user, loading, error] = useAuthState()
   const [userData, setUserData] = useState(null)
-
+  const [showModal, setShowModal] = useState(false)
+  const [size, setSize] = useState("Small")
+  const [address, setAddress] = useState("")
+  const [city, setCity] = useState("")
+  const [state, setState] = useState("")
+  const [zipcode, setZipcode] = useState("")
+  const [phone, setPhone] = useState("")
+  const [hackathon, setHackathon] = useState(false)
 
   useEffect(() => {
     if (loading) return;
     if (user) {
-      useUser(user.uid).then(doc => { 
+      useUser(user.uid).then(doc => {
         setUserData(doc)
       })
     } else {
       navigate('/auth')
     }
-  }, [user, loading])
+  }, [user, loading, showModal])
+
+  useEffect(() => {
+    if (loading) return
+    if (!userData) return
+    setShowModal(userData?.size == null)
+  }, [userData, loading])
 
   const logOut = () => {
     signOut(auth).then(() => {
@@ -58,6 +72,20 @@ const Account = () => {
       // An error happened.
       console.log("ERROR: ", error)
     });
+  }
+
+  const completeRegistration = async (e) => {
+    e.preventDefault()
+    await updateDoc(doc(firestore, "users", user.uid), {
+      size: size,
+      address: address,
+      city: city,
+      state: state,
+      zipcode: zipcode,
+      phone: phone,
+      hackathon: hackathon,
+    })
+    setShowModal(false)
   }
 
   if (loading) return <div></div>
@@ -203,6 +231,110 @@ const Account = () => {
             </div>
           </section>
         </div>
+
+        {showModal && (
+          <>
+            <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none">
+              <div className="relative w-auto my-6 mx-auto max-w-4xl">
+                <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none">
+                  <div className="flex flex-col items-start justify-between p-5 border-b rounded-t">
+                    <h1 className="text-xl font-semibold text-gray-900">Completing Registration</h1>
+                    <span className="flex items-center">
+                      <span className="text-s font-light text-gray-900">Enter your address, shirt size, and hackathon interest to complete your registration.</span>
+                    </span>
+                  </div>
+                  <form className="space-y-4 p-5" onSubmit={(e) => completeRegistration(e)}>
+                    <label className="block">
+                      <span className="block mb-1 text-xs font-medium text-gray-700">Street Address</span>
+                      <input
+                        className="form-input"
+                        type="text"
+                        placeholder="Ex. 123 Main St"
+                        required
+                        value={address}
+                        onChange={(e) => setAddress(e.target.value)}
+                      />
+                    </label>
+                    <label className="block">
+                      <span className="block mb-1 text-xs font-medium text-gray-700">City</span>
+                      <input
+                        className="form-input"
+                        type="text"
+                        placeholder="Ex. San Francisco"
+                        required
+                        value={city}
+                        onChange={(e) => setCity(e.target.value)}
+                      />
+                    </label>
+                    <label className="block">
+                      <span className="block mb-1 text-xs font-medium text-gray-700">State</span>
+                      <input
+                        className="form-input"
+                        type="text"
+                        placeholder="Ex. CA"
+                        required
+                        value={state}
+                        onChange={(e) => setState(e.target.value)}
+                      />
+                    </label>
+                    <label className="block">
+                      <span className="block mb-1 text-xs font-medium text-gray-700">Zip Code</span>
+                      <input
+                        className="form-input"
+                        type="text"
+                        placeholder="Ex. 94103"
+                        required
+                        value={zipcode}
+                        onChange={(e) => setZipcode(e.target.value)}
+                      />
+                    </label>
+                    <label className="block">
+                      <span className="block mb-1 text-xs font-medium text-gray-700">Phone Number</span>
+                      <input
+                        className="form-input"
+                        type="tel"
+                        placeholder="Ex. (123) 456-7890"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                      />
+                    </label>
+                    <div>
+                      <label htmlFor="size" className="block mb-1 text-xs font-medium text-gray-700">
+                        T-Shirt Size
+                      </label>
+                      <select
+                        id="size"
+                        name="size"
+                        className="form-select"
+                        value={size}
+                        onChange={(e) => setSize(e.target.value)}
+                      >
+                        <option>Small</option>
+                        <option>Medium</option>
+                        <option>Large</option>
+                      </select>
+                    </div>
+                    <label className="block">
+                      <span className="text-xs font-medium text-gray-700">Participating in hackathon?</span>
+                      <input
+                        className="form-checkbox ml-2"
+                        type="checkbox"
+                        checked={hackathon}
+                        onChange={() => setHackathon(!hackathon)}
+                      />
+                    </label>
+                    <input
+                      type="submit"
+                      className="w-full btn btn-primary btn-lg"
+                      value="Finish Registration"
+                    />
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+          </>
+        )}
       </section>
     </PageLayout>
   )

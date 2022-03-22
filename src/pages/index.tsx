@@ -72,7 +72,7 @@ const Home = () => {
             conference + hackathon event<br/>to learn about its engineering, ethics, and policymaking.
           </h1>
           <p className="px-0 mb-6 text-lg text-gray-600 md:text-xl lg:px-24">
-            The National Autonomous Vehicle Conference is a unique opportunity
+            The National Autonomous Vehicle Expo is a unique opportunity
             to learn about the future of autonomous vehicles.
           </p>
           <div className="mb-4 space-x-0 md:space-x-2 md:mb-8">

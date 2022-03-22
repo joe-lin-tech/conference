@@ -104,9 +104,17 @@ const Schedule = () => {
           <Session
             name="Miguel D. Acosta - California Department of Motor Vehicles (Autonomous Vehicles Branch)"
             category="Policymaking"
-            title="Autonomous Vehicles Program Overview - California Department of Motor Vehicles"
+            title="Autonomous Vehicles Program Overview - California DMV"
             description="Overview of California’s regulatory framework for testing and deployment of Autonomous Vehicles"
             image="/profiles/miguel-acosta.jpg"
+            links={[]}
+          />
+          <Session
+            name="Katie Clothier - Autonomous Vehicle Product Developer at Stantec GenerationAV"
+            category="Ethics"
+            title="The Path to Autonomy at Stantec GenerationAV"
+            description="Autonomous vehicles are coming. But what does that mean? We’ll review the variety of autonomous vehicle applications that exist today, the use cases they’re serving, and why it’s so important that we’re having this conversation now."
+            image="/profiles/katie-clothier.png"
             links={[]}
           />
           <Session
