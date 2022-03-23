@@ -7,21 +7,21 @@ const About = () => {
     <PageLayout page="About">
       <section className="px-4 pt-4 pb-10 mx-auto max-w-7xl">
         <div className="container px-6 py-10 mx-auto">
-          <h1 className="text-4xl font-extrabold text-center leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight">Conference Team</h1>
+          <h1 className="text-4xl font-extrabold text-center leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight">About the Team</h1>
           <div className="flex justify-center mx-auto mt-6">
             <span className="inline-block w-40 h-1 bg-blue-500 rounded-full"></span>
             <span className="inline-block w-3 h-1 mx-1 bg-blue-500 rounded-full"></span>
             <span className="inline-block w-1 h-1 bg-blue-500 rounded-full"></span>
           </div>
           <p className="mt-6 text-lg text-center text-gray-600 md:text-xl lg:px-24">
-            The Conference Team primarily consists of representatives from BSA Troop 452. The team is also composed of various high school and college volunteers.
+            The autonomous vehicle expo team primarily consists of representatives from BSA Troop 452. The team is also composed of various high school and college volunteers.
           </p>
         </div>
         <div className="grid gap-2 grid-cols-9">
           <div className="col-start-4 col-end-7">
             <ProfileCard
               name="Joe Lin"
-              position="Conference Lead"
+              position="Autonomous Vehicle Expo Lead"
               url="/profiles/joe-lin.jpeg"
               links={[
                 {
@@ -43,25 +43,36 @@ const About = () => {
         <div className="grid gap-1 grid-cols-4">
           <div className="col-start-1">
             <ProfileCard
-              name="Oliver Ni"
-              position="Partner Rep & Team Member"
-              url="/profiles/oliver-ni.jpg"
+              name="Ivan Lin"
+              position="Director of Logistics"
+              url="/profiles/ivan-lin.jpg"
               links={[
                 {
                   name: "github",
-                  url: "https://github.com/oliver-ni",
+                  url: "https://github.com",
                 },
-                {
-                  name: "linkedin",
-                  url: "https://www.linkedin.com/in/oliverni/",
-                },
-                {
-                  name: "facebook",
-                  url: "https://www.facebook.com",
-                }
               ]}
             />
           </div>
+          <ProfileCard
+            name="Oliver Ni"
+            position="Partner Rep & Team Member"
+            url="/profiles/oliver-ni.jpg"
+            links={[
+              {
+                name: "github",
+                url: "https://github.com/oliver-ni",
+              },
+              {
+                name: "linkedin",
+                url: "https://www.linkedin.com/in/oliverni/",
+              },
+              {
+                name: "facebook",
+                url: "https://www.facebook.com",
+              }
+            ]}
+          />
           <ProfileCard
             name="Kento Nishi"
             position="Partner Representative"
@@ -251,17 +262,6 @@ const About = () => {
               {
                 name: "linkedin",
                 url: "https://www.linkedin.com/in/bennie-chang/",
-              },
-            ]}
-          />
-          <ProfileCard
-            name="Ivan Lin"
-            position="Team Member"
-            url="/profiles/placeholder.png"
-            links={[
-              {
-                name: "linkedin",
-                url: "",
               },
             ]}
           />

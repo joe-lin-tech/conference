@@ -25,44 +25,12 @@ const Auth = ({ location }) => {
   const [multiAuthProvider, setMultiAuthProvider] = useState(null)
   const [multiAuthCredential, setMultiAuthCredential] = useState(null)
   const [alreadyUsed, setAlreadyUsed] = useState(false)
+  const [noAccount, setNoAccount] = useState(false)
+  const [wrongPassword, setWrongPassword] = useState(false)
   const [user, loading, error] = useAuthState()
   if (loading) return <div></div>
   if (user) navigate("/account")
   const authType = location?.state?.authType || "register"
-
-  // const handleMultipleAuthentication = (email, credential) => {
-  //   console.log("email", email)
-  //   console.log("pendingCred", credential)
-  //   fetchSignInMethodsForEmail(auth, email).then((methods) => {
-  //     if (methods[0] === 'password') {
-  //       const promptUserForPassword = () => {
-  //         return prompt('Please enter your password');
-  //       }
-  //       var password = promptUserForPassword();
-  //       signInWithEmailAndPassword(auth, email, password).then((result) => {
-  //         // Step 4a.
-  //         return linkWithCredential(result.user, credential);
-  //       }).then(() => {
-  //         navigate("/account")
-  //       });
-  //       return;
-  //     }
-  //     const providers = {
-  //       "google.com": new GoogleAuthProvider(),
-  //       "github.com": new GithubAuthProvider(),
-  //     }
-  //     const provider = providers[methods[0]];
-  //     if (provider) {
-  //       signInWithPopup(auth, provider).then((result) => {
-  //         return linkWithCredential(result.user, credential);
-  //       }).then(function () {
-  //         navigate("/account")
-  //       });
-  //     }
-  //   }).catch((error) => {
-  //     console.log("MAJOR ERROR: ", error)
-  //   });
-  // }
 
   const finishMultipleAuthentication = async () => {
     const result = await signInWithPopup(auth, multiAuthProvider)
@@ -170,6 +138,12 @@ const Auth = ({ location }) => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        if (error.code == "auth/user-not-found") {
+          setNoAccount(true)
+        }
+        if (error.code == "auth/wrong-password") {
+          setWrongPassword(true)
+        }
       });
   }
 
@@ -350,6 +324,68 @@ const Auth = ({ location }) => {
                       className="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                       onClick={() => {
                         setMultiAuth(false)
+                      }}
+                    >
+                      <span className="sr-only">Close</span>
+                      <FaTimes className="h-5 w-5" aria-hidden="true" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>}
+        {noAccount && <div
+          aria-live="assertive"
+          className="fixed inset-0 flex items-end px-4 py-6 pointer-events-none sm:p-6 sm:items-start"
+        >
+          <div className="w-full flex flex-col items-center space-y-4 sm:items-end">
+            <div className="max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden">
+              <div className="p-4">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0">
+                    <FaExclamationCircle className="h-6 w-6 text-red-400" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3 w-0 flex-1 pt-0.5">
+                    <p className="text-sm font-medium text-gray-900">Account not found.</p>
+                    <p className="mt-1 text-sm text-gray-500">Make an account or sign in with Google/Github.</p>
+                  </div>
+                  <div className="ml-4 flex-shrink-0 flex">
+                    <button
+                      className="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                      onClick={() => {
+                        setNoAccount(false)
+                      }}
+                    >
+                      <span className="sr-only">Close</span>
+                      <FaTimes className="h-5 w-5" aria-hidden="true" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>}
+        {wrongPassword && <div
+          aria-live="assertive"
+          className="fixed inset-0 flex items-end px-4 py-6 pointer-events-none sm:p-6 sm:items-start"
+        >
+          <div className="w-full flex flex-col items-center space-y-4 sm:items-end">
+            <div className="max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden">
+              <div className="p-4">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0">
+                    <FaExclamationCircle className="h-6 w-6 text-red-400" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3 w-0 flex-1 pt-0.5">
+                    <p className="text-sm font-medium text-gray-900">Incorrect Credentials.</p>
+                    <p className="mt-1 text-sm text-gray-500">You've entered an incorrect password.</p>
+                  </div>
+                  <div className="ml-4 flex-shrink-0 flex">
+                    <button
+                      className="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                      onClick={() => {
+                        setWrongPassword(false)
                       }}
                     >
                       <span className="sr-only">Close</span>

@@ -63,7 +63,7 @@ const Home = () => {
   return (
     <PageLayout page="Home">
       <section className="px-4 py-20 mx-auto max-w-7xl">
-        <div className="w-full mx-auto text-left md:w-11/12 xl:w-9/12 md:text-center">
+        <div className="w-10/12 mx-auto text-center md:w-11/12 xl:w-9/12">
           <h1 className="mb-6 text-4xl font-extrabold leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight">
             Come to the{" "}
             <span className="block w-full text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 lg:inline">
@@ -121,9 +121,9 @@ const Home = () => {
           <div className="flex items-center justify-center">
             <img src="logos/zadarlabs.png" alt="ZadarLabs" className="block object-contain h-24" />
           </div>
-          {/* <div className="flex items-center justify-center">
-            <img src="/logos/beaverworks.png" alt="MIT Beaverworks" className="block object-contain h-24" />
-          </div> */}
+          <div className="flex items-center justify-center">
+            <img src="/logos/waymo.png" alt="Waymo" className="block object-contain w-full" />
+          </div>
           <div className="flex items-center justify-center">
             <img src="/logos/cavcoe.jpg" alt="CAVCOE" className="block object-contain h-24" />
           </div>
@@ -131,14 +131,8 @@ const Home = () => {
             <img src="/logos/inspirit-ai.png" alt="Inspirit AI" className="block object-contain h-24" />
           </div>
           <div className="flex items-center justify-center">
-            <img src="/logos/lynbrook-aiml.png" alt="Lynbrook AI & Machine Learning Club" className="block object-contain w-full" />
-          </div>
-          <div className="flex items-center justify-center">
             <img src="/logos/pcf.png" alt="Project Code Foundation" className="block object-contain w-full" />
           </div>
-          {/* <div className="flex items-center justify-center">
-            <img src="https://avatars.githubusercontent.com/u/21328078?s=400&u=ea1dad3556e3d282677babcb2b642e61b8163715&v=4" alt="Lynbrook Computer Science Club" className="block object-contain h-24" />
-          </div> */}
           <div className="flex items-center justify-center">
             <img src="/logos/lynbrook-robotics.png" alt="Lynbrook Robotics Club" className="block object-contain h-24" />
           </div>

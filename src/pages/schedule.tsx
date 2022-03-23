@@ -9,14 +9,14 @@ const Schedule = () => {
     <PageLayout page="Schedule">
       <section className="px-4 pt-4 pb-10 mx-auto max-w-7xl">
         <div className="container px-6 py-10 mx-auto">
-          <h1 className="text-4xl font-extrabold text-center leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight">Conference Schedule</h1>
+          <h1 className="text-4xl font-extrabold text-center leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight">Event Schedule</h1>
           <div className="flex justify-center mx-auto mt-6">
             <span className="inline-block w-40 h-1 bg-blue-500 rounded-full"></span>
             <span className="inline-block w-3 h-1 mx-1 bg-blue-500 rounded-full"></span>
             <span className="inline-block w-1 h-1 bg-blue-500 rounded-full"></span>
           </div>
           <p className="mt-6 text-lg text-center text-gray-600 md:text-xl lg:px-24">
-            Here's what to look forward to at our autonomous vehicle national conference! Click each card to learn more about the content of each session and workshop!
+            Here's what to look forward to at our autonomous vehicle national expo! Click each card to learn more about the content of each session and workshop!
           </p>
         </div>
         <div className="space-y-2">
@@ -112,9 +112,19 @@ const Schedule = () => {
           <Session
             name="Katie Clothier - Autonomous Vehicle Product Developer at Stantec GenerationAV"
             category="Ethics"
-            title="The Path to Autonomy at Stantec GenerationAV"
+            title="The Path to Autonomy"
             description="Autonomous vehicles are coming. But what does that mean? We’ll review the variety of autonomous vehicle applications that exist today, the use cases they’re serving, and why it’s so important that we’re having this conversation now."
             image="/profiles/katie-clothier.png"
+            links={[]}
+          />
+          <Session
+            name="Amanda Ventura Zink - Public Affairs Manager at Waymo"
+            category="Engineering"
+            title="Waymo 101: The Potential of Autonomous Driving Technology"
+            description="Waymo is an autonomous driving technology company on a mission to make it safe and easy for people and goods to get where they're going.
+                        We think this technology has potential to save lives, increase independence and improve mobility access for millions of people who cannot drive themselves.
+                        In this session, learn about Waymo's mission and the autonomous driving technology (hardware and software) that provides one of our vehicles a 360-degree view in full daylight and at night."
+            image="/profiles/amanda-zink.jpg"
             links={[]}
           />
           <Session

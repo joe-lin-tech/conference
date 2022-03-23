@@ -33,6 +33,9 @@ const SponsorsPartners = () => {
                 <img className="w-full" src="/logos/beaverworks.png" alt="MIT Beaverworks" />
               </div>
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
+                <img className="h-24" src="/logos/waymo.png" alt="Waymo" />
+              </div>
+              <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
                 <img className="w-full" src="/logos/cavcoe.jpg" alt="CAVCOE" />
               </div>
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">

@@ -10,29 +10,50 @@ import { doc, updateDoc } from "firebase/firestore"
 
 const sessions = [
   {
-    title: 'Can Cars Gesture? Expressive Autonomous Vehicles',
-    speaker: 'Paul Schmitt',
-    date: 'April 16 9:00 AM',
-    datetime: '2021-04-16',
+    title: "Can Cars Gesture? Expressive Autonomous Vehicles",
+    speaker: "Paul Schmitt - Motion Planning System Architect & Expressive Robotics Manager at Motional",
+    time: "April 16th, 2022 at 9:00 AM PST",
   },
   {
-    title: 'Open World Visual Perception for Autonomous Driving',
-    speaker: 'Dr. Shu Kong',
-    date: 'April 16 10:00 AM',
-    datetime: '2021-04-16',
+    title: "Autonomous Vehicles Program Overview - California DMV",
+    speaker: "Miguel D. Acosta - California Department of Motor Vehicles (Autonomous Vehicles Branch)",
+    time: "April 16th, 2022 at 10:00 AM PST",
   },
   {
-    title: 'Career Opportunities in the CAV Ecosystem',
-    speaker: 'Barrie Kirk',
-    date: 'April 16 11:00 AM',
-    datetime: '2021-04-16',
+    title: "Metrics and Methods for 3D Detection and Forecasting",
+    speaker: "Dr. Neehar Peri - PhD Student at CMU’s Argo AI Center for Autonomous Vehicle Research",
+    time: "April 16th, 2022 at 11:00 AM PST",
   },
   {
-    title: 'Metrics and Methods for 3D Detection and Forecasting',
-    speaker: 'Dr. Neehar Peri',
-    date: 'April 16 11:00 AM',
-    datetime: '2021-04-16',
+    title: "NVIDIA’s AI Infrastructure for Self-Driving Cars",
+    speaker: "Yifang Xu - Engineering Manager (Perception for Autonomous Driving) at NVIDIA",
+    time: "April 16th, 2022 at 1:00 PM PST",
   },
+  {
+    title: "A Gentle Introduction to Artificial Intelligence",
+    speaker: "Emmy Li - Instructional Design Engineer at Inspirit AI (Stanford University Alumni)",
+    time: "April 16th, 2022 at 2:00 PM PST",
+  },
+  {
+    title: "Open World Visual Perception for Autonomous Driving",
+    speaker: "Dr. Shu Kong - Postdoctoral Researcher at CMU’s Argo AI Center for Autonomous Vehicle Research",
+    time: "April 17th, 2022 at 9:00 AM PST",
+  },
+  {
+    title: "Career Opportunities in the CAV Ecosystem",
+    speaker: "Barrie Kirk - Co-Founder and Executive Director of CAVCOE (Canadian Automated Vehicles Center of Excellence)",
+    time: "April 17th, 2022 at 10:00 AM PST",
+  },
+  {
+    title: "The Path to Autonomy",
+    speaker: "Katie Clothier - Autonomous Vehicle Product Developer at Stantec GenerationAV at Stantec GenerationAV",
+    time: "April 17th, 2022 at 11:00 AM PST",
+  },
+  {
+    title: "Waymo 101: The Potential of Autonomous Driving Technology",
+    speaker: "Amanda Ventura Zink - Public Affairs Manager at Waymo",
+    time: "April 17th, 2022 at 1:00 PM PST",
+  }
 ]
 
 const Account = () => {
@@ -126,7 +147,6 @@ const Account = () => {
             </button>
           </div>
         </div>
-
         <div className="mt-8 max-w-3xl mx-auto grid grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-5">
           <div className="space-y-6 lg:col-start-1 lg:col-span-3">
             <section>
@@ -177,13 +197,11 @@ const Account = () => {
               </div>
             </section>
           </div>
-
           <section aria-labelledby="timeline-title" className="lg:col-start-4 lg:col-span-2">
             <div className="bg-white px-4 py-5 shadow sm:rounded-lg sm:px-6">
               <h2 id="timeline-title" className="text-lg font-medium text-gray-900">
                 Timeline
               </h2>
-
               <div className="mt-6 flow-root">
                 <ul role="list" className="-mb-8">
                   {sessions.map((s, i) => (
@@ -211,7 +229,7 @@ const Account = () => {
                               </p>
                             </div>
                             <div className="text-right text-sm whitespace-nowrap text-gray-500">
-                              <time dateTime={s.datetime}>{s.date}</time>
+                              <p>{s.time}</p>
                             </div>
                           </div>
                         </div>
@@ -231,7 +249,6 @@ const Account = () => {
             </div>
           </section>
         </div>
-
         {showModal && (
           <>
             <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none">

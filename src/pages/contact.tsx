@@ -66,7 +66,7 @@ const Contact = () => {
     {
       id: 5,
       question: 'How do I sign up for the hackathon?',
-      answer: 'Hackathon registration is through Devpost, so please visit avexpo.org/hackathon .',
+      answer: 'Hackathon registration is through Devpost, so please visit avexpo.org/hackathon to sign up and view related guidelines and rules for the hackathon.',
     },
     {
       id: 6,
@@ -99,7 +99,6 @@ const Contact = () => {
                 </div>
                 <h3 className="text-xl font-medium text-blue-gray-900">{link.name}</h3>
                 {link.description}
-                {/* <p className="mt-4 text-base text-blue-gray-500">{link.description}</p> */}
               </div>
               <div className="p-6 bg-blue-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8">
                 <a href={link.href} className="text-base font-medium text-blue-700 hover:text-blue-600">

@@ -17,7 +17,7 @@ const Navigation = ({ page }) => {
         <div className="flex items-center space-x-1">
           <div className="hidden space-x-1 md:inline-flex">
             <AniLink className="btn btn-sm btn-link" fade to="/about" duration={1}>About the Team</AniLink>
-            <AniLink className="btn btn-sm btn-link" fade to="/schedule" duration={1}>Conference Schedule</AniLink>
+            <AniLink className="btn btn-sm btn-link" fade to="/schedule" duration={1}>Event Schedule</AniLink>
             <AniLink className="btn btn-sm btn-link" fade to="/sponsors-partners" duration={1}>Sponsors + Partners</AniLink>
             <AniLink className="btn btn-sm btn-link" fade to="/contact" duration={1}>Contact</AniLink>
           </div>

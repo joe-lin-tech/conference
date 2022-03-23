@@ -69,6 +69,14 @@ const Timeline = () => {
       category: "Engineering",
       image: "/profiles/katie-clothier.png",
     },
+    {
+      title: "Waymo 101: The Potential of Autonomous Driving Technology",
+      speaker: "Amanda Ventura Zink - Public Affairs Manager at Waymo",
+      description: "TODO",
+      time: "April 17th, 2022 at 1:00 PM PST",
+      category: "Engineering",
+      image: "/profiles/amanda-zink.jpg",
+    }
   ]
 
   return (
