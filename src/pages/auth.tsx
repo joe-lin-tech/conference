@@ -74,6 +74,8 @@ const Auth = ({ location }) => {
         displayName: result.user.displayName,
         email: result.user.email,
         photoURL: result.user.photoURL,
+      }, {
+        merge: true
       })
       navigate("/account")
     } catch (error) {
@@ -93,6 +95,8 @@ const Auth = ({ location }) => {
         displayName: result.user.displayName,
         email: result.user.email,
         photoURL: result.user.photoURL,
+      }, {
+        merge: true
       })
       navigate("/account")
       // ...
