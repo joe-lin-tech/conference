@@ -19,10 +19,18 @@ const Timeline = () => {
       image: "/profiles/miguel-acosta.jpg",
     },
     {
+      title: "A Gentle Introduction to Artificial Intelligence",
+      speaker: "Emmy Li - Instructional Design Engineer at Inspirit AI (Stanford University Alumni)",
+      description: "TODO",
+      time: "April 16th, 2022 at 11:00 AM PST",
+      category: "Engineering",
+      image: "/profiles/emmy-li.jpeg",
+    },
+    {
       title: "Metrics and Methods for 3D Detection and Forecasting",
       speaker: "Dr. Neehar Peri - PhD Student at CMU’s Argo AI Center for Autonomous Vehicle Research",
       description: "TODO",
-      time: "April 16th, 2022 at 11:00 AM PST",
+      time: "April 16th, 2022 at 1:00 PM PST",
       category: "Engineering",
       image: "/profiles/neehar-peri.png",
     },
@@ -30,17 +38,9 @@ const Timeline = () => {
       title: "NVIDIA’s AI Infrastructure for Self-Driving Cars",
       speaker: "Yifang Xu - Engineering Manager (Perception for Autonomous Driving) at NVIDIA",
       description: "TODO",
-      time: "April 16th, 2022 at 1:00 PM PST",
-      category: "Engineering",
-      image: "/profiles/yifang-xu.jpg",
-    },
-    {
-      title: "A Gentle Introduction to Artificial Intelligence",
-      speaker: "Emmy Li - Instructional Design Engineer at Inspirit AI (Stanford University Alumni)",
-      description: "TODO",
       time: "April 16th, 2022 at 2:00 PM PST",
       category: "Engineering",
-      image: "/profiles/emmy-li.jpeg",
+      image: "/profiles/yifang-xu.jpg",
     },
   ]
 

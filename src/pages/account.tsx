@@ -20,18 +20,18 @@ const sessions = [
     time: "April 16th, 2022 at 10:00 AM PST",
   },
   {
+    title: "A Gentle Introduction to Artificial Intelligence",
+    speaker: "Emmy Li - Instructional Design Engineer at Inspirit AI (Stanford University Alumni)",
+    time: "April 16th, 2022 at 11:00 AM PST",
+  },
+  {
     title: "Metrics and Methods for 3D Detection and Forecasting",
     speaker: "Dr. Neehar Peri - PhD Student at CMU’s Argo AI Center for Autonomous Vehicle Research",
-    time: "April 16th, 2022 at 11:00 AM PST",
+    time: "April 16th, 2022 at 1:00 PM PST",
   },
   {
     title: "NVIDIA’s AI Infrastructure for Self-Driving Cars",
     speaker: "Yifang Xu - Engineering Manager (Perception for Autonomous Driving) at NVIDIA",
-    time: "April 16th, 2022 at 1:00 PM PST",
-  },
-  {
-    title: "A Gentle Introduction to Artificial Intelligence",
-    speaker: "Emmy Li - Instructional Design Engineer at Inspirit AI (Stanford University Alumni)",
     time: "April 16th, 2022 at 2:00 PM PST",
   },
   {
@@ -124,6 +124,24 @@ const Account = () => {
     setShowOptOut(false)
   }
 
+  const updateProfile = async () => {
+    if (userData?.size == null) {
+      await updateDoc(doc(firestore, "users", user.uid), {
+        timelineLength: timelineLength,
+      })
+    } else {
+      await updateDoc(doc(firestore, "users", user.uid), {
+        size: size,
+        address: address,
+        city: city,
+        state: state,
+        zipcode: zipcode,
+        phone: phone,
+        hackathon: hackathon,
+      })
+    }
+  }
+
   if (loading) return <div></div>
 
   return (
@@ -187,17 +205,33 @@ const Account = () => {
                       <dt className="text-sm font-medium text-gray-500">Email Address</dt>
                       <dd className="mt-1 text-sm text-gray-900">{userData?.email}</dd>
                     </div>
-                    <div className="sm:col-span-1">
-                      <dt className="text-sm font-medium text-gray-500">T-Shirt Size</dt>
-                      <dd className={`mt-1 text-sm ${userData?.size ? "text-gray-900" : "text-red-500"}`}>{userData?.size || "N/A: Opted Out of Rewards/Merch"}</dd>
-                    </div>
-                    <div className="sm:col-span-1">
+                    <div className="sm:col-span-2">
                       <dt className="text-sm font-medium text-gray-500">Expo Reward Points</dt>
                       <dd className="mt-1 text-sm text-gray-900">{userData?.points || "None"}</dd>
                     </div>
                     <div className="sm:col-span-1">
-                      <dt className="text-sm font-medium text-gray-500">Phone</dt>
-                      <dd className="mt-1 text-sm text-gray-900">{userData?.phone || "None"}</dd>
+                      <dt className="text-sm font-medium text-gray-500">Street Address</dt>
+                      <dd className={`mt-1 text-sm ${userData?.address ? "text-gray-900" : "text-red-500"}`}>{userData?.address || "N/A: Opted Out of Rewards/Merch"}</dd>
+                    </div>
+                    <div className="sm:col-span-1">
+                      <dt className="text-sm font-medium text-gray-500">City</dt>
+                      <dd className={`mt-1 text-sm ${userData?.city ? "text-gray-900" : "text-red-500"}`}>{userData?.city || "N/A: Opted Out of Rewards/Merch"}</dd>
+                    </div>
+                    <div className="sm:col-span-1">
+                      <dt className="text-sm font-medium text-gray-500">State</dt>
+                      <dd className={`mt-1 text-sm ${userData?.state ? "text-gray-900" : "text-red-500"}`}>{userData?.state || "N/A: Opted Out of Rewards/Merch"}</dd>
+                    </div>
+                    <div className="sm:col-span-1">
+                      <dt className="text-sm font-medium text-gray-500">Zip Code</dt>
+                      <dd className={`mt-1 text-sm ${userData?.zipcode ? "text-gray-900" : "text-red-500"}`}>{userData?.zipcode || "N/A: Opted Out of Rewards/Merch"}</dd>
+                    </div>
+                    <div className="sm:col-span-1">
+                      <dt className="text-sm font-medium text-gray-500">Phone Number</dt>
+                      <dd className={`mt-1 text-sm ${userData?.size ? "text-gray-900" : "text-red-500"}`}>{userData?.phone || "N/A: Opted Out of Rewards/Merch"}</dd>
+                    </div>
+                    <div className="sm:col-span-1">
+                      <dt className="text-sm font-medium text-gray-500">T-Shirt Size</dt>
+                      <dd className={`mt-1 text-sm ${userData?.size ? "text-gray-900" : "text-red-500"}`}>{userData?.size || "N/A: Opted Out of Rewards/Merch"}</dd>
                     </div>
                     <div className="sm:col-span-2">
                       <dt className="text-sm font-medium text-gray-500">About</dt>
@@ -364,11 +398,20 @@ const Account = () => {
                         onChange={() => setHackathon(!hackathon)}
                       />
                     </label>
-                    <input
-                      type="submit"
-                      className="w-full btn btn-primary btn-lg"
-                      value="Opt In for Rewards/Merch"
-                    />
+                    <div className="flex">
+                      <input
+                        type="submit"
+                        className="w-full btn btn-primary btn-lg mr-1"
+                        value="Opt In for Rewards/Merch"
+                      />
+                      <button
+                        type="button"
+                        className="w-full btn bg-gray-200 btn-lg ml-1 hover:bg-gray-300"
+                        onClick={() => setShowModal(false)}
+                      >
+                        Don't Opt In
+                      </button>
+                    </div>
                   </form>
                 </div>
               </div>

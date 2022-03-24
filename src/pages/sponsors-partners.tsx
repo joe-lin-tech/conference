@@ -42,11 +42,19 @@ const SponsorsPartners = () => {
                 <img className="h-24" src="/logos/motional.png" alt="Motional" />
               </div>
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
+                <img className="w-full" src="/logos/bizlink.png" alt="BizLink" />
+              </div>
+              <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
                 <img className="w-full" src="/logos/inspirit-ai.png" alt="Inspirit AI" />
               </div>
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
                 <a href="https://stickermule.com" target="_blank">
                   <img className="h-24" src="/logos/sticker-mule.png" alt="StickerMule" />
+                </a>
+              </div>
+              <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
+                <a href="https://taskade.com" target="_blank">
+                  <img className="w-full" src="/logos/taskade.png" alt="Taskade" />
                 </a>
               </div>
             </div>
