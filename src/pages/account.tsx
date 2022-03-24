@@ -67,6 +67,7 @@ const Account = () => {
   const [state, setState] = useState("")
   const [zipcode, setZipcode] = useState("")
   const [phone, setPhone] = useState("")
+  const [about, setAbout] = useState("")
   const [timelineLength, setTimelineLength] = useState(3)
   const [hackathon, setHackathon] = useState(false)
 
@@ -80,6 +81,12 @@ const Account = () => {
       navigate('/auth')
     }
   }, [user, loading, showModal, showOptOut])
+  
+  useEffect(() => {
+    if (loading) return
+    if (!userData) return
+    setAbout(userData?.about || "None")
+  }, [userData, loading])
 
   const logOut = () => {
     signOut(auth).then(() => {
@@ -121,7 +128,7 @@ const Account = () => {
   const updateProfile = async () => {
     if (userData?.size == null) {
       await updateDoc(doc(firestore, "users", user.uid), {
-        timelineLength: timelineLength,
+        about: about
       })
     } else {
       await updateDoc(doc(firestore, "users", user.uid), {
