@@ -11,6 +11,14 @@ module.exports = {
     image: "/logos/logo.jpg", // Path to the image placed in the 'static' folder, in the project's root directory.
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          process.env.GOOGLE_ANALYTICS_TRACKING_ID,
+        ]
+      }
+    },
     `gatsby-plugin-postcss`,
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-image`,
@@ -23,13 +31,5 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: [
-          process.env.GOOGLE_ANALYTICS_TRACKING_ID,
-        ]
-      }
-    }
   ],
 }
