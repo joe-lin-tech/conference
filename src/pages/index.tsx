@@ -28,7 +28,7 @@ const Home = () => {
     animatedImage.onload = () => {
       context.drawImage(animatedImage, 0, 0);
     };
-    preloadImages();
+    // preloadImages();
   }, []);
 
   useScrollPosition(({ currPos }) => {
