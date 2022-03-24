@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import PageLayout from '../components/page-layout';
-import { FaCalendar } from "react-icons/fa";
+import { FaCalendar, FaEdit, FaExclamationCircle, FaTimes } from "react-icons/fa";
 import { navigate } from "gatsby";
 import { auth, firestore } from "../../firebase";
 import { useUser, useAuthState } from "../hooks/firebase"
 import { signOut } from "firebase/auth"
 import { useEffect } from "react";
-import { doc, updateDoc } from "firebase/firestore"
+import { deleteField, doc, updateDoc } from "firebase/firestore"
 
 const sessions = [
   {
@@ -60,12 +60,14 @@ const Account = () => {
   const [user, loading, error] = useAuthState()
   const [userData, setUserData] = useState(null)
   const [showModal, setShowModal] = useState(false)
+  const [showOptOut, setShowOptOut] = useState(false)
   const [size, setSize] = useState("Small")
   const [address, setAddress] = useState("")
   const [city, setCity] = useState("")
   const [state, setState] = useState("")
   const [zipcode, setZipcode] = useState("")
   const [phone, setPhone] = useState("")
+  const [timelineLength, setTimelineLength] = useState(3)
   const [hackathon, setHackathon] = useState(false)
 
   useEffect(() => {
@@ -77,13 +79,13 @@ const Account = () => {
     } else {
       navigate('/auth')
     }
-  }, [user, loading, showModal])
+  }, [user, loading, showModal, showOptOut])
 
-  useEffect(() => {
-    if (loading) return
-    if (!userData) return
-    setShowModal(userData?.size == null)
-  }, [userData, loading])
+  // useEffect(() => {
+  //   if (loading) return
+  //   if (!userData) return
+  //   setShowModal(userData?.size == null)
+  // }, [userData, loading])
 
   const logOut = () => {
     signOut(auth).then(() => {
@@ -95,7 +97,7 @@ const Account = () => {
     });
   }
 
-  const completeRegistration = async (e) => {
+  const optIn = async (e) => {
     e.preventDefault()
     await updateDoc(doc(firestore, "users", user.uid), {
       size: size,
@@ -107,6 +109,19 @@ const Account = () => {
       hackathon: hackathon,
     })
     setShowModal(false)
+  }
+
+  const optOut = async () => {
+    await updateDoc(doc(firestore, "users", user.uid), {
+      size: deleteField(),
+      address: deleteField(),
+      city: deleteField(),
+      state: deleteField(),
+      zipcode: deleteField(),
+      phone: deleteField(),
+      hackathon: deleteField(),
+    })
+    setShowOptOut(false)
   }
 
   if (loading) return <div></div>
@@ -151,11 +166,16 @@ const Account = () => {
           <div className="space-y-6 lg:col-start-1 lg:col-span-3">
             <section>
               <div className="bg-white shadow sm:rounded-lg">
-                <div className="px-4 py-5 sm:px-6">
-                  <h2 className="text-lg leading-6 font-medium text-gray-900">
-                    Attendee Information
-                  </h2>
-                  <p className="mt-1 max-w-2xl text-sm text-gray-500">Profile information and expo details.</p>
+                <div className="px-4 py-5 sm:px-6 flex justify-between">
+                  <div>
+                    <h2 className="text-lg leading-6 font-medium text-gray-900">
+                      Attendee Information
+                    </h2>
+                    <p className="mt-1 max-w-2xl text-sm text-gray-500">Profile information and expo details.</p>
+                  </div>
+                  <button type="button" className="btn btn-primary self-center" onClick={userData?.size == null ? () => setShowModal(true) : () => setShowOptOut(true)}>
+                    {userData?.size == null ? "Opt-In for Rewards/Merch" : "Opt-Out of Rewards/Merch"}
+                  </button>
                 </div>
                 <div className="border-t border-gray-200 px-4 py-5 sm:px-6">
                   <dl className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
@@ -168,8 +188,8 @@ const Account = () => {
                       <dd className="mt-1 text-sm text-gray-900">{userData?.email}</dd>
                     </div>
                     <div className="sm:col-span-1">
-                      <dt className="text-sm font-medium text-gray-500">T-shirt Size</dt>
-                      <dd className="mt-1 text-sm text-gray-900">{userData?.size}</dd>
+                      <dt className="text-sm font-medium text-gray-500">T-Shirt Size</dt>
+                      <dd className={`mt-1 text-sm ${userData?.size ? "text-gray-900" : "text-red-500"}`}>{userData?.size || "N/A: Opted Out of Rewards/Merch"}</dd>
                     </div>
                     <div className="sm:col-span-1">
                       <dt className="text-sm font-medium text-gray-500">Expo Reward Points</dt>
@@ -188,11 +208,14 @@ const Account = () => {
                   </dl>
                 </div>
                 <div>
-                  <a
-                    className="block bg-gray-50 text-sm font-medium text-gray-500 text-center px-4 py-4 hover:text-gray-700 sm:rounded-b-lg"
+                  <button
+                    type="button"
+                    className="bg-gray-50 text-sm font-medium text-gray-500 text-center px-4 py-4 hover:text-gray-700 sm:rounded-b-lg flex items-center justify-center w-full"
+                    onClick={() => {}}
                   >
-                    Add Profile Information
-                  </a>
+                    <FaEdit className="mr-2" />
+                    Edit Profile Information (Feature Coming Soon...)
+                  </button>
                 </div>
               </div>
             </section>
@@ -204,7 +227,7 @@ const Account = () => {
               </h2>
               <div className="mt-6 flow-root">
                 <ul role="list" className="-mb-8">
-                  {sessions.map((s, i) => (
+                  {sessions.slice(0, timelineLength).map((s, i) => (
                     <li key={i}>
                       <div className="relative pb-8">
                         {i !== sessions.length - 1 ? (
@@ -219,8 +242,8 @@ const Account = () => {
                               <FaCalendar className="w-4 h-4 text-white" aria-hidden="true" />
                             </span>
                           </div>
-                          <div className="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
-                            <div>
+                          <div className="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4 grid grid-cols-5">
+                            <div className="col-start-1 col-end-4">
                               <p className="text-sm text-gray-500">
                                 {s.title}{' with '}
                                 <a href="#" className="font-medium text-gray-900">
@@ -228,7 +251,7 @@ const Account = () => {
                                 </a>
                               </p>
                             </div>
-                            <div className="text-right text-sm whitespace-nowrap text-gray-500">
+                            <div className="text-right text-sm text-gray-500 col-span-2">
                               <p>{s.time}</p>
                             </div>
                           </div>
@@ -242,8 +265,9 @@ const Account = () => {
                 <button
                   type="button"
                   className="px-4 py-2 btn btn-primary text-sm"
+                  onClick={timelineLength != sessions.length ? () => setTimelineLength(sessions.length) : () => setTimelineLength(3)}
                 >
-                  View More
+                  {timelineLength != sessions.length ? "View More" : "View Less"}
                 </button>
               </div>
             </div>
@@ -255,12 +279,12 @@ const Account = () => {
               <div className="relative w-auto my-6 mx-auto max-w-4xl">
                 <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none">
                   <div className="flex flex-col items-start justify-between p-5 border-b rounded-t">
-                    <h1 className="text-xl font-semibold text-gray-900">Completing Registration</h1>
+                    <h1 className="text-xl font-semibold text-gray-900">Opting In for Rewards/Merch</h1>
                     <span className="flex items-center">
-                      <span className="text-s font-light text-gray-900">Enter your address, shirt size, and hackathon interest to complete your registration.</span>
+                      <span className="text-s font-light text-gray-900">Enter your address and shirt size, so we know where to ship your rewards/merch.</span>
                     </span>
                   </div>
-                  <form className="space-y-4 p-5" onSubmit={(e) => completeRegistration(e)}>
+                  <form className="space-y-4 p-5" onSubmit={(e) => optIn(e)}>
                     <label className="block">
                       <span className="block mb-1 text-xs font-medium text-gray-700">Street Address</span>
                       <input
@@ -343,7 +367,7 @@ const Account = () => {
                     <input
                       type="submit"
                       className="w-full btn btn-primary btn-lg"
-                      value="Finish Registration"
+                      value="Opt In for Rewards/Merch"
                     />
                   </form>
                 </div>
@@ -352,6 +376,46 @@ const Account = () => {
             <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
           </>
         )}
+        {showOptOut && <div
+          aria-live="assertive"
+          className="fixed inset-0 flex items-end px-4 py-6 pointer-events-none sm:p-6 sm:items-start"
+        >
+          <div className="w-full flex flex-col items-center space-y-4 sm:items-end">
+            <div className="max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden">
+              <div className="p-4">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0">
+                    <FaExclamationCircle className="h-6 w-6 text-red-400" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3 w-0 flex-1 pt-0.5">
+                    <p className="text-sm font-medium text-gray-900">Opting Out of Rewards/Merch!</p>
+                    <p className="mt-1 text-sm text-gray-500">If you opt out, this means we will not be able to send you any rewards or merch from the event.</p>
+                    <div className="mt-3 flex space-x-7">
+                      <button
+                        type="button"
+                        onClick={optOut}
+                        className="bg-white rounded-md text-sm font-medium text-green-600 hover:text-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                      >
+                        Continue
+                      </button>
+                    </div>
+                  </div>
+                  <div className="ml-4 flex-shrink-0 flex">
+                    <button
+                      className="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                      onClick={() => {
+                        setShowOptOut(false)
+                      }}
+                    >
+                      <span className="sr-only">Close</span>
+                      <FaTimes className="h-5 w-5" aria-hidden="true" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>}
       </section>
     </PageLayout>
   )
