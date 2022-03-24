@@ -24,9 +24,9 @@ const Auth = ({ location }) => {
   const [multiAuth, setMultiAuth] = useState(false)
   const [multiAuthProvider, setMultiAuthProvider] = useState(null)
   const [multiAuthCredential, setMultiAuthCredential] = useState(null)
-  const [alreadyUsed, setAlreadyUsed] = useState(false)
-  const [noAccount, setNoAccount] = useState(false)
-  const [wrongPassword, setWrongPassword] = useState(false)
+  const [showError, setShowError] = useState(false)
+  const [errorCode, setErrorCode] = useState("")
+  const [errorMessage, setErrorMessage] = useState("")
   const [user, loading, error] = useAuthState()
   if (loading) return <div></div>
   if (user) navigate("/account")
@@ -125,7 +125,14 @@ const Auth = ({ location }) => {
       const errorMessage = error.message;
       // ..
       if (errorCode == "auth/email-already-in-use") {
-        setAlreadyUsed(true)
+        setErrorCode("Email Already in Use")
+        setErrorMessage("This email is already in use. Please login with a provider or use a different email.")
+        setShowError(true)
+      }
+      if (errorCode == "auth/weak-password") {
+        setErrorCode("Weak Password")
+        setErrorMessage("Password is too weak. Please use a stronger password.")
+        setShowError(true)
       }
     }
   }
@@ -142,11 +149,15 @@ const Auth = ({ location }) => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        if (error.code == "auth/user-not-found") {
-          setNoAccount(true)
+        if (errorCode == "auth/user-not-found") {
+          setErrorCode("User Not Found")
+          setErrorMessage("No account found with that email! Make an account or sign in with Google/Github.")
+          setShowError(true)
         }
-        if (error.code == "auth/wrong-password") {
-          setWrongPassword(true)
+        if (errorCode == "auth/wrong-password") {
+          setErrorCode("Wrong Password")
+          setErrorMessage("The password you entered is incorrect. Try again!")
+          setShowError(true)
         }
       });
   }
@@ -207,22 +218,6 @@ const Auth = ({ location }) => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </label>
-            {/* {authType == "register" && <div>
-              <label htmlFor="size" className="block mb-1 text-xs font-medium text-gray-700">
-                T-Shirt Size
-              </label>
-              <select
-                id="size"
-                name="size"
-                className="form-select"
-                value={size}
-                onChange={(e) => setSize(e.target.value)}
-              >
-                <option>Small</option>
-                <option>Medium</option>
-                <option>Large</option>
-              </select>
-            </div>} */}
             <input
               type="submit"
               className="w-full btn btn-primary btn-lg"
@@ -268,37 +263,6 @@ const Auth = ({ location }) => {
             </div>
           </div>
         </div>
-        {alreadyUsed && <div
-          aria-live="assertive"
-          className="fixed inset-0 flex items-end px-4 py-6 pointer-events-none sm:p-6 sm:items-start"
-        >
-          <div className="w-full flex flex-col items-center space-y-4 sm:items-end">
-            <div className="max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden">
-              <div className="p-4">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0">
-                    <FaExclamationCircle className="h-6 w-6 text-red-400" aria-hidden="true" />
-                  </div>
-                  <div className="ml-3 w-0 flex-1 pt-0.5">
-                    <p className="text-sm font-medium text-gray-900">Email Already Used.</p>
-                    <p className="mt-1 text-sm text-gray-500">Sign in with Google or Github.</p>
-                  </div>
-                  <div className="ml-4 flex-shrink-0 flex">
-                    <button
-                      className="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                      onClick={() => {
-                        setAlreadyUsed(false)
-                      }}
-                    >
-                      <span className="sr-only">Close</span>
-                      <FaTimes className="h-5 w-5" aria-hidden="true" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>}
         {multiAuth && <div
           aria-live="assertive"
           className="fixed inset-0 flex items-end px-4 py-6 pointer-events-none sm:p-6 sm:items-start"
@@ -339,7 +303,7 @@ const Auth = ({ location }) => {
             </div>
           </div>
         </div>}
-        {noAccount && <div
+        {showError && <div
           aria-live="assertive"
           className="fixed inset-0 flex items-end px-4 py-6 pointer-events-none sm:p-6 sm:items-start"
         >
@@ -351,45 +315,14 @@ const Auth = ({ location }) => {
                     <FaExclamationCircle className="h-6 w-6 text-red-400" aria-hidden="true" />
                   </div>
                   <div className="ml-3 w-0 flex-1 pt-0.5">
-                    <p className="text-sm font-medium text-gray-900">Account not found.</p>
-                    <p className="mt-1 text-sm text-gray-500">Make an account or sign in with Google/Github.</p>
+                    <p className="text-sm font-medium text-gray-900">{errorCode}</p>
+                    <p className="mt-1 text-sm text-gray-500">{errorMessage}</p>
                   </div>
                   <div className="ml-4 flex-shrink-0 flex">
                     <button
                       className="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                       onClick={() => {
-                        setNoAccount(false)
-                      }}
-                    >
-                      <span className="sr-only">Close</span>
-                      <FaTimes className="h-5 w-5" aria-hidden="true" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>}
-        {wrongPassword && <div
-          aria-live="assertive"
-          className="fixed inset-0 flex items-end px-4 py-6 pointer-events-none sm:p-6 sm:items-start"
-        >
-          <div className="w-full flex flex-col items-center space-y-4 sm:items-end">
-            <div className="max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden">
-              <div className="p-4">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0">
-                    <FaExclamationCircle className="h-6 w-6 text-red-400" aria-hidden="true" />
-                  </div>
-                  <div className="ml-3 w-0 flex-1 pt-0.5">
-                    <p className="text-sm font-medium text-gray-900">Incorrect Credentials.</p>
-                    <p className="mt-1 text-sm text-gray-500">You've entered an incorrect password.</p>
-                  </div>
-                  <div className="ml-4 flex-shrink-0 flex">
-                    <button
-                      className="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                      onClick={() => {
-                        setWrongPassword(false)
+                        setShowError(false)
                       }}
                     >
                       <span className="sr-only">Close</span>

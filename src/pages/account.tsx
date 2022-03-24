@@ -81,12 +81,6 @@ const Account = () => {
     }
   }, [user, loading, showModal, showOptOut])
 
-  // useEffect(() => {
-  //   if (loading) return
-  //   if (!userData) return
-  //   setShowModal(userData?.size == null)
-  // }, [userData, loading])
-
   const logOut = () => {
     signOut(auth).then(() => {
       // Sign-out successful.
