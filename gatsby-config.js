@@ -4,7 +4,11 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Autonomous Vehicle Conference`,
+    title: `Autonomous Vehicle Expo`,
+    description:
+      "A unique experience to learn about the engineering, ethics, and policymaking of emerging autonomous vehicle technology.",
+    url: "https://avexpo.org", // No trailing slash allowed!
+    image: "/logos/logo.jpg", // Path to the image placed in the 'static' folder, in the project's root directory.
   },
   plugins: [
     `gatsby-plugin-postcss`,
@@ -20,9 +24,9 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
       }
     }
   ],
