@@ -55,7 +55,7 @@ const Contact = () => {
       id: 3,
       question: 'How do I earn prizes at the event?',
       answer:
-        'Prizes can be earned by fully attending speaker and workshop sessions throughout the event! You can view your prize progress in your account profile.',
+        'Prizes can be earned by attending speaker and workshop sessions and placing in the hackathon! You can view your prize progress in your account profile.',
     },
     {
       id: 4,
@@ -70,9 +70,9 @@ const Contact = () => {
     },
     {
       id: 6,
-      question: 'Why did the invisible man turn down the job offer?',
+      question: 'What are the rules for the hackathon?',
       answer:
-        "He couldn't see himself doing it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+        "You can view the hackathon rules and other hackathon information by heading over to our devpost page (autonomous-vehicle-expo.devpost.com).",
     },
   ]
 
@@ -197,14 +197,13 @@ const Contact = () => {
                     Join our team
                   </h2>
                   <p className="text-lg text-white">
-                    Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet
-                    purus dui laoreet diam sed lacus, fames.
+                    If you have any conference/hackathon planning experience, we'd love to have you on our team to further elevate this experience for our audience.
                   </p>
                   <a
                     className="block w-full py-3 px-5 text-center bg-white border border-transparent rounded-md shadow-md text-base font-medium text-blue-700 hover:bg-blue-gray-50 sm:inline-block sm:w-auto"
-                    href="#"
+                    href="mailto:info@avexpo.org"
                   >
-                    Explore open positions
+                    Send Us An Email to Apply
                   </a>
                 </div>
               </div>

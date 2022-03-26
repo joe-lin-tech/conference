@@ -59,7 +59,7 @@ const sessions = [
 const Account = () => {
   const [user, loading, error] = useAuthState()
   const [userData, setUserData] = useState(null)
-  const [showModal, setShowModal] = useState(false)
+  const [showOptIn, setShowOptIn] = useState(false)
   const [showOptOut, setShowOptOut] = useState(false)
   const [size, setSize] = useState("Small")
   const [address, setAddress] = useState("")
@@ -80,7 +80,7 @@ const Account = () => {
     } else {
       navigate('/auth')
     }
-  }, [user, loading, showModal, showOptOut])
+  }, [user, loading, showOptIn, showOptOut])
   
   useEffect(() => {
     if (loading) return
@@ -109,7 +109,7 @@ const Account = () => {
       phone: phone,
       hackathon: hackathon,
     })
-    setShowModal(false)
+    setShowOptIn(false)
   }
 
   const optOut = async () => {
@@ -132,6 +132,7 @@ const Account = () => {
       })
     } else {
       await updateDoc(doc(firestore, "users", user.uid), {
+        about: about,
         size: size,
         address: address,
         city: city,
@@ -192,7 +193,7 @@ const Account = () => {
                     </h2>
                     <p className="mt-1 max-w-2xl text-sm text-gray-500">Profile information and expo details.</p>
                   </div>
-                  <button type="button" className="btn btn-primary self-center" onClick={userData?.size == null ? () => setShowModal(true) : () => setShowOptOut(true)}>
+                  <button type="button" className="btn btn-primary self-center" onClick={userData?.size == null ? () => setShowOptIn(true) : () => setShowOptOut(true)}>
                     {userData?.size == null ? "Opt-In for Rewards/Merch" : "Opt-Out of Rewards/Merch"}
                   </button>
                 </div>
@@ -308,7 +309,7 @@ const Account = () => {
             </div>
           </section>
         </div>
-        {showModal && (
+        {showOptIn && (
           <>
             <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none">
               <div className="relative w-auto my-6 mx-auto max-w-4xl">
@@ -408,7 +409,7 @@ const Account = () => {
                       <button
                         type="button"
                         className="w-full btn bg-gray-200 btn-lg ml-1 hover:bg-gray-300"
-                        onClick={() => setShowModal(false)}
+                        onClick={() => setShowOptIn(false)}
                       >
                         Don't Opt In
                       </button>

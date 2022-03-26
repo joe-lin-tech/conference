@@ -17,7 +17,7 @@ const About = () => {
             The autonomous vehicle expo team primarily consists of representatives from BSA Troop 452. The team is also composed of various high school and college volunteers.
           </p>
         </div>
-        <div className="grid gap-2 grid-cols-9">
+        <div className="md:grid md:gap-2 md:grid-cols-9">
           <div className="col-start-4 col-end-7">
             <ProfileCard
               name="Joe Lin"
@@ -40,7 +40,7 @@ const About = () => {
             />
           </div>
         </div>
-        <div className="grid gap-1 grid-cols-4">
+        <div className="md:grid md:gap-1 md:grid-cols-4">
           <div className="col-start-1">
             <ProfileCard
               name="Ivan Lin"

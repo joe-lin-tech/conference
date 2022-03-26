@@ -114,7 +114,7 @@ const Home = () => {
             </a>
           </div>
         </div>
-        <div className="grid grid-cols-4 gap-10 text-center lg:grid-cols-8 mt-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-center lg:grid-cols-8 mt-16 mx-12">
           <div className="flex items-center justify-center">
             <img src="/logos/motional.png" alt="Motional" className="block object-contain h-24" />
           </div>
@@ -125,7 +125,7 @@ const Home = () => {
             <img src="/logos/waymo.png" alt="Waymo" className="block object-contain w-full" />
           </div>
           <div className="flex items-center justify-center">
-            <img src="/logos/cavcoe.jpg" alt="CAVCOE" className="block object-contain h-24" />
+            <img src="/logos/cavcoe.png" alt="CAVCOE" className="block object-contain h-24" />
           </div>
           <div className="flex items-center justify-center">
             <img src="/logos/inspirit-ai.png" alt="Inspirit AI" className="block object-contain h-24" />

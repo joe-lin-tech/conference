@@ -14,13 +14,12 @@ const Footer = () => {
             <span className="sr-only">Autonomous Vehicle</span>
           </AniLink>
           <p className="my-4 text-xs leading-normal text-gray-500">
-            Bring together your discussions, memberships, and content. Integrate a thriving community wherever your audience is, all under your own brand.
+            Learn more about the engineering, ethics, and policymaking of autonomous vehicles through our in-depth speaker and workshop sessions.
           </p>
           <label className="flex w-24">
             <span className="sr-only">Select a language</span>
             <select className="form-select form-select-sm">
               <option>English</option>
-              <option>Chinese</option>
             </select>
           </label>
         </div>

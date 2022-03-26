@@ -208,7 +208,7 @@ const Auth = ({ location }) => {
               />
             </label>
             <label className="block">
-              <span className="block mb-1 text-xs font-medium text-gray-700">Create a Password</span>
+              <span className="block mb-1 text-xs font-medium text-gray-700">{authType == "register" ? "Create a Password" : "Enter Your Password"}</span>
               <input
                 className="form-input"
                 type="password"

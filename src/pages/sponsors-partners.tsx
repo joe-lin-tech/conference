@@ -25,7 +25,7 @@ const SponsorsPartners = () => {
         </div>
         {tabSelect == 0 && <div className="bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-3 gap-0.5 md:grid-cols-5">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-0.5">
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
                 <img className="h-24" src="/logos/zadarlabs.png" alt="ZadarLabs" />
               </div>
@@ -33,10 +33,10 @@ const SponsorsPartners = () => {
                 <img className="w-full" src="/logos/beaverworks.png" alt="MIT Beaverworks" />
               </div>
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
-                <img className="h-24" src="/logos/waymo.png" alt="Waymo" />
+                <img className="w-full md:w-auto md:h-24" src="/logos/waymo.png" alt="Waymo" />
               </div>
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
-                <img className="w-full" src="/logos/cavcoe.jpg" alt="CAVCOE" />
+                <img className="w-full" src="/logos/cavcoe.png" alt="CAVCOE" />
               </div>
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
                 <img className="h-24" src="/logos/motional.png" alt="Motional" />
@@ -57,12 +57,22 @@ const SponsorsPartners = () => {
                   <img className="w-full" src="/logos/taskade.png" alt="Taskade" />
                 </a>
               </div>
+              <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
+                <img className="w-full" src="/logos/aops.png" alt="Art of Problem Solving" />
+              </div>
             </div>
           </div>
         </div>}
         {tabSelect == 1 && <div className="bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-3 gap-0.5 md:grid-cols-5">
+            <div className="grid grid-cols-2 gap-0.5 md:grid-cols-5">
+              <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
+                <img
+                  className="w-full"
+                  src="/logos/pave.png"
+                  alt="Partners for Automated Vehicle Education"
+                />
+              </div>
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
                 <img
                   className="h-24"
@@ -93,7 +103,7 @@ const SponsorsPartners = () => {
               </div>
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
                 <img
-                  className="h-24"
+                  className="w-full md:w-auto md:h-24"
                   src="/logos/ten80-education.png"
                   alt="Ten80 Education"
                 />
