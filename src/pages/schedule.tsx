@@ -140,6 +140,21 @@ const Schedule = () => {
             image="/profiles/placeholder.png"
             links={[]}
           />
+          <Session
+            name="Christopher Lai, Jane Herlihy - MIT Beaverworks Autonomous RACECAR Course Instructor"
+            category="Engineering"
+            title="Programming Autonomous Vehicles through Simulations and Image Analysis"
+            description="Overview on Python as a programming language (up to classes, this will be a very quick overview on the topic, so should be treated as review for the students)
+                        Overview of the simulation from BWSI, how we educate students using the program, all software needed, how we simulate a racecar as a 3D model
+                        Topics that are required for understanding autonomous processes regarding the racecar's functionality
+                        Using High-Level Functions (racecar library)
+                        Proportional Control
+                        OpenCV (Computer Vision) and HSV Filtering
+                        State Machines, PID Control, and Closed Loop Feedback Systems
+                        Live Demonstration of the racecar simulation, connecting our code to the simulation, executing scripts and seeing the car drive on its own"
+            image="/profiles/chris-lai.png"
+            links={[]}
+          />
         </div>}
         {tabSelect == 1 && <Timeline />}
       </section>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PageLayout from '../components/page-layout';
-import { FaCalendar, FaEdit, FaExclamationCircle, FaTimes } from "react-icons/fa";
+import { FaCalendar, FaEdit, FaExclamationCircle, FaTimes, FaRegCircle, FaRegCheckCircle } from "react-icons/fa";
 import { navigate } from "gatsby";
 import { auth, firestore } from "../../firebase";
 import { useUser, useAuthState } from "../hooks/firebase"
@@ -57,10 +57,10 @@ const sessions = [
 ]
 
 const Account = () => {
-  const [user, loading, error] = useAuthState()
-  const [userData, setUserData] = useState(null)
+  const [user, loading, _error] = useAuthState();
   const [showOptIn, setShowOptIn] = useState(false)
   const [showOptOut, setShowOptOut] = useState(false)
+  const [showHackathon, setShowHackathon] = useState(false)
   const [size, setSize] = useState("Small")
   const [address, setAddress] = useState("")
   const [city, setCity] = useState("")
@@ -69,23 +69,20 @@ const Account = () => {
   const [phone, setPhone] = useState("")
   const [about, setAbout] = useState("")
   const [timelineLength, setTimelineLength] = useState(3)
-  const [hackathon, setHackathon] = useState(false)
+
+  const { data: userData, error } = useUser(user?.uid);
 
   useEffect(() => {
     if (loading) return;
-    if (user) {
-      useUser(user.uid).then(doc => {
-        setUserData(doc)
-      })
-    } else {
+    if (!user) {
       navigate('/auth')
     }
-  }, [user, loading, showOptIn, showOptOut])
-  
+  }, [user, loading])
+
   useEffect(() => {
     if (loading) return
     if (!userData) return
-    setAbout(userData?.about || "None")
+    setAbout(userData.about || "None")
   }, [userData, loading])
 
   const logOut = () => {
@@ -107,7 +104,6 @@ const Account = () => {
       state: state,
       zipcode: zipcode,
       phone: phone,
-      hackathon: hackathon,
     })
     setShowOptIn(false)
   }
@@ -120,7 +116,6 @@ const Account = () => {
       state: deleteField(),
       zipcode: deleteField(),
       phone: deleteField(),
-      hackathon: deleteField(),
     })
     setShowOptOut(false)
   }
@@ -139,12 +134,21 @@ const Account = () => {
         state: state,
         zipcode: zipcode,
         phone: phone,
-        hackathon: hackathon,
       })
     }
   }
 
+  const toggleHackathon = async () => {
+    if (!userData.hackathon) {
+      setShowHackathon(true)
+    }
+    await updateDoc(doc(firestore, "users", user.uid), {
+      hackathon: !userData.hackathon
+    })
+  }
+
   if (loading) return <div></div>
+  if (!userData) return <div></div>
 
   return (
     <PageLayout page="Account">
@@ -173,6 +177,14 @@ const Account = () => {
             </div>
           </div>
           <div className="mt-6 flex flex-col-reverse justify-stretch space-y-4 space-y-reverse sm:flex-row-reverse sm:justify-end sm:space-x-reverse sm:space-y-0 sm:space-x-3 md:mt-0 md:flex-row md:space-x-3">
+            <button
+              type="button"
+              className="px-4 py-2 btn btn-light-secondary text-sm flex items-center"
+              onClick={toggleHackathon}
+            >
+              {userData?.hackathon ? <FaRegCheckCircle className="mr-2" /> : <FaRegCircle className="mr-2" />}
+              Participating in Hackathon?
+            </button>
             <button
               type="button"
               className="px-4 py-2 btn btn-primary text-sm"
@@ -247,7 +259,7 @@ const Account = () => {
                   <button
                     type="button"
                     className="bg-gray-50 text-sm font-medium text-gray-500 text-center px-4 py-4 hover:text-gray-700 sm:rounded-b-lg flex items-center justify-center w-full"
-                    onClick={() => {}}
+                    onClick={() => { }}
                   >
                     <FaEdit className="mr-2" />
                     Edit Profile Information (Feature Coming Soon...)
@@ -391,15 +403,6 @@ const Account = () => {
                         <option>Large</option>
                       </select>
                     </div>
-                    <label className="block">
-                      <span className="text-xs font-medium text-gray-700">Participating in hackathon?</span>
-                      <input
-                        className="form-checkbox ml-2"
-                        type="checkbox"
-                        checked={hackathon}
-                        onChange={() => setHackathon(!hackathon)}
-                      />
-                    </label>
                     <div className="flex">
                       <input
                         type="submit"
@@ -450,6 +453,37 @@ const Account = () => {
                       className="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                       onClick={() => {
                         setShowOptOut(false)
+                      }}
+                    >
+                      <span className="sr-only">Close</span>
+                      <FaTimes className="h-5 w-5" aria-hidden="true" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>}
+        {showHackathon && <div
+          aria-live="assertive"
+          className="fixed inset-0 flex items-end px-4 py-6 pointer-events-none sm:p-6 sm:items-start"
+        >
+          <div className="w-full flex flex-col items-center space-y-4 sm:items-end">
+            <div className="max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden">
+              <div className="p-4">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0">
+                    <FaExclamationCircle className="h-6 w-6 text-red-400" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3 w-0 flex-1 pt-0.5">
+                    <p className="text-sm font-medium text-gray-900">Participating in Hackathon</p>
+                    <p className="mt-1 text-sm text-gray-500">This is not official hackathon registration. Make sure you officially register your team on our devpost at https://autonomous-vehicle-expo.devpost.com/</p>
+                  </div>
+                  <div className="ml-4 flex-shrink-0 flex">
+                    <button
+                      className="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                      onClick={() => {
+                        setShowHackathon(false)
                       }}
                     >
                       <span className="sr-only">Close</span>

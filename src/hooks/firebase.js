@@ -1,7 +1,8 @@
 import { app, auth } from "../../firebase.js";
-import { getFirestore, collection as firestoreCollection, doc, getDoc } from "firebase/firestore"
+import { getFirestore, collection as firestoreCollection, doc, onSnapshot } from "firebase/firestore"
 import { useAuthState as getAuthState } from 'react-firebase-hooks/auth';
 import { useCollection as getCollection } from 'react-firebase-hooks/firestore';
+import { useEffect, useState } from "react";
 
 export const useAuthState = () => {
     if (!auth) {
@@ -25,12 +26,36 @@ export const useCollection = (collection) => {
     return getCollection(firestoreCollection(firestore, collection))
 }
 
-export const useUser = async (uid) => {
+export const _useCollection = (collection) => {
+    const firestore = useFirestore();
+    const [state, setState] = useState({ data: null, error: null });
+
+    useEffect(() => {
+        const colRef = firestoreCollection(firestore, collection);
+        return onSnapshot(colRef, (snapshot) => {
+            setState({ data: snapshot.docs.map(x => x.data()), error: null });
+        }, (error) => {
+            setState({ data: null, error })
+        })
+    })
+
+    return state;
+}
+
+export const useUser = (uid) => {
     const firestore = useFirestore()
-    const docRef = doc(firestore, "users", uid)
-    const docSnap = await getDoc(docRef)
-    if (docSnap.exists()) {
-        return docSnap.data()
-    }
-    return null
+    const [userData, setUserData] = useState({ data: null, error: null });
+
+    useEffect(() => {
+        if (!uid) return;
+        const docRef = doc(firestore, "users", uid)
+        return onSnapshot(docRef, (docSnap) => {
+            console.log(docSnap);
+            setUserData({ data: docSnap.data(), error: null })
+        }, (error) => {
+            setUserData({ data: null, error })
+        });
+    }, [uid, firestore])
+
+    return userData;
 }
