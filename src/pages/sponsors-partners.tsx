@@ -42,6 +42,9 @@ const SponsorsPartners = () => {
                 <img className="h-24" src="/logos/motional.png" alt="Motional" />
               </div>
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
+                <img className="w-full" src="/logos/nanomath.png" alt="Nanomath" />
+              </div>
+              <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
                 <img className="w-full" src="/logos/bizlink.png" alt="BizLink" />
               </div>
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
@@ -59,6 +62,11 @@ const SponsorsPartners = () => {
               </div>
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
                 <img className="w-full" src="/logos/aops.png" alt="Art of Problem Solving" />
+              </div>
+              <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
+                <div className="h-24 flex items-center">
+                  <img className="w-full" src="/logos/digital-ocean.png" alt="Digital Ocean" />
+                </div>
               </div>
             </div>
           </div>

@@ -92,13 +92,13 @@ const Schedule = () => {
             links={[]}
           />
           <Session
-            name="Emmy Li - Instructional Design Engineer at Inspirit AI (Stanford University Alumni)"
+            name="Malachi Mabie - Machine Learning Instructor and Developer at Inspirit AI (UCSD)"
             category="Engineering"
             title="A Gentle Introduction to Artificial Intelligence"
             description="Ever seen a car drive around without passengers or accidentally set off the Alexa in your home? What about the advertisements on your Instagram knowing that you’re in market for a new pair of pants or Netflix recommending a movie you’ve been hearing about?
                         These are all examples of artificial intelligence, or computers becoming as “smart” as humans. In this talk, we will begin by taking a look at all the ways that AI influences the way we navigate the world,
                         peek under the hood to see how machine learning works, and offer insight into how young learners play a key role in creating ethical and responsible technology."
-            image="/profiles/emmy-li.jpeg"
+            image="/profiles/malachi-mabie.jpeg"
             links={[]}
           />
           <Session
@@ -128,7 +128,7 @@ const Schedule = () => {
             links={[]}
           />
           <Session
-            name="Kurt Fredland"
+            name="Mahmoud Saadat - Co-Founder and Chief Executive Officer at Zadar Labs"
             category="Engineering"
             title="Advancing Autonomous Perception with 4D Imaging Radar"
             description="High resolution 4D imaging radars have significant advantages to conventional radar and other sensing modalities used today in autonomous driving applications.
@@ -137,7 +137,7 @@ const Schedule = () => {
                         Additionally, advanced perception requirements for autonomous driving demands novel software algorithms and machine learning and AI techniques to process high resolution radar data.
                         Zadar has developed an end-to-end software-defined 4D imaging radar solution by combining the latest signal processing techniques and machine learning and AI algorithms to achieve superior perception performance.
                         Join this session to understand Zadar's approach to developing their novel perception solution and how their high-performance portfolio of software-defined 4D imaging radar products enable advanced autonomous vehicles of the future."
-            image="/profiles/placeholder.png"
+            image="/profiles/mahmoud-saadat.jpeg"
             links={[]}
           />
           <Session

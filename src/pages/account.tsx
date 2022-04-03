@@ -21,7 +21,7 @@ const sessions = [
   },
   {
     title: "A Gentle Introduction to Artificial Intelligence",
-    speaker: "Emmy Li - Instructional Design Engineer at Inspirit AI (Stanford University Alumni)",
+    speaker: "Malachi Mabie - Machine Learning Instructor and Developer at Inspirit AI (UCSD)",
     time: "April 16th, 2022 at 11:00 AM PST",
   },
   {

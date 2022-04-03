@@ -20,11 +20,11 @@ const Timeline = () => {
     },
     {
       title: "A Gentle Introduction to Artificial Intelligence",
-      speaker: "Emmy Li - Instructional Design Engineer at Inspirit AI (Stanford University Alumni)",
+      speaker: "Malachi Mabie - Machine Learning Instructor and Developer at Inspirit AI (UCSD)",
       description: "TODO",
       time: "April 16th, 2022 at 11:00 AM PST",
       category: "Engineering",
-      image: "/profiles/emmy-li.jpeg",
+      image: "/profiles/malachi-mabie.jpeg",
     },
     {
       title: "Metrics and Methods for 3D Detection and Forecasting",
@@ -76,6 +76,14 @@ const Timeline = () => {
       time: "April 17th, 2022 at 1:00 PM PST",
       category: "Engineering",
       image: "/profiles/amanda-zink.jpg",
+    },
+    {
+      title: "Advancing Autonomous Perception with 4D Imaging Radar",
+      speaker: "Mahmoud Saadat - Co-Founder and Chief Executive Officer at Zadar Labs",
+      description: "TODO",
+      time: "April 17th, 2022 at 2:00 PM PST",
+      category: "Engineering",
+      image: "/profiles/mahmoud-saadat.jpeg"
     }
   ]
 
