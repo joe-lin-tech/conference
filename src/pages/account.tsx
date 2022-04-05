@@ -166,7 +166,7 @@ const Account = () => {
               </div>
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">{userData?.displayName}</h1>
+              <h1 className="text-2xl font-bold text-gray-900">{userData?.displayName || ""}</h1>
               <p className="text-sm font-medium text-gray-500">
                 Attending the{' '}
                 <a href="/" className="text-gray-900">
@@ -217,7 +217,7 @@ const Account = () => {
                     </div>
                     <div className="sm:col-span-1">
                       <dt className="text-sm font-medium text-gray-500">Email Address</dt>
-                      <dd className="mt-1 text-sm text-gray-900">{userData?.email}</dd>
+                      <dd className="mt-1 text-sm text-gray-900">{userData?.email || "None"}</dd>
                     </div>
                     <div className="sm:col-span-2">
                       <dt className="text-sm font-medium text-gray-500">Expo Reward Points</dt>

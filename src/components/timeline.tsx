@@ -5,7 +5,7 @@ const Timeline = () => {
     {
       title: "Can Cars Gesture? Expressive Autonomous Vehicles",
       speaker: "Paul Schmitt - Motion Planning System Architect & Expressive Robotics Manager at Motional",
-      description: "",
+      description: "TODO",
       time: "April 16th, 2022 at 9:00 AM PST",
       category: "Engineering",
       image: "/profiles/paul-schmitt.png",
@@ -42,6 +42,14 @@ const Timeline = () => {
       category: "Engineering",
       image: "/profiles/yifang-xu.jpg",
     },
+    {
+      title: "Programming Autonomous Vehicles through Simulations and Image Analysis",
+      speaker: "Christopher Lai, Jane Herlihy - MIT Beaverworks Autonomous RACECAR Instructors",
+      description: "TODO",
+      time: "April 16th, 2022 at 3:00 PM PST",
+      category: "Engineering",
+      image: "/profiles/chris-lai.png"
+    }
   ]
 
   const sunday = [
