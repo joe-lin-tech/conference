@@ -21,11 +21,12 @@ const Schedule = () => {
         </div>
         <div className="space-y-2">
           <nav className="tab justify-center">
-            <a className={`tab-link ${tabSelect === 0 ? 'active' : ''}`} onClick={() => setTabSelect(0)}>Sessions</a>
-            <a className={`tab-link ${tabSelect === 1 ? 'active' : ''}`} onClick={() => setTabSelect(1)}>Timeline</a>
+            <a className={`tab-link ${tabSelect === 0 ? 'active' : ''}`} onClick={() => setTabSelect(0)}>Timeline</a>
+            <a className={`tab-link ${tabSelect === 1 ? 'active' : ''}`} onClick={() => setTabSelect(1)}>Sessions</a>
           </nav>
         </div>
-        {tabSelect == 0 && <div className="grid gap-8 grid-cols-2 mt-8">
+        {tabSelect == 0 && <Timeline />}
+        {tabSelect == 1 && <div className="grid gap-8 grid-cols-2 mt-8">
           <Session
             name="Paul Schmitt - Motion Planning System Architect & Expressive Robotics Manager at Motional"
             category="Engineering"
@@ -156,7 +157,6 @@ const Schedule = () => {
             links={[]}
           />
         </div>}
-        {tabSelect == 1 && <Timeline />}
       </section>
     </PageLayout>
   )

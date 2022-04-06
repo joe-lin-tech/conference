@@ -45,6 +45,9 @@ const SponsorsPartners = () => {
                 <img className="w-full" src="/logos/nanomath.png" alt="Nanomath" />
               </div>
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
+                <img className="h-24" src="/logos/poketwo.webp" alt="Poketwo" />
+              </div>
+              <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
                 <img className="w-full" src="/logos/bizlink.png" alt="BizLink" />
               </div>
               <div className="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50">
