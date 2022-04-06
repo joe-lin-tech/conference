@@ -76,7 +76,7 @@ const About = () => {
           <ProfileCard
             name="Kento Nishi"
             position="Partner Representative"
-            url="https://lhswebdev.github.io/images/profiles/kento.jpg"
+            url="https://anish-lakkapragada.github.io/SLI/images/kento.png"
             links={[
               {
                 name: "github",
