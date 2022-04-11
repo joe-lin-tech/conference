@@ -19,6 +19,7 @@ module.exports = {
         ]
       }
     },
+    `gatsby-plugin-react-head`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-image`,

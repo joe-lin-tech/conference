@@ -71,7 +71,7 @@ const Timeline = () => {
     },
     {
       title: "The Path to Autonomy",
-      speaker: "Katie Clothier - Autonomous Vehicle Product Developer at Stantec GenerationAV at Stantec GenerationAV",
+      speaker: "Katie Clothier - Autonomous Vehicle Product Developer at Stantec GenerationAV",
       description: "TODO",
       time: "April 17th, 2022 at 11:00 AM PST",
       category: "Engineering",

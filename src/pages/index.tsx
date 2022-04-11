@@ -131,14 +131,17 @@ const Home = () => {
             <img src="/logos/inspirit-ai.png" alt="Inspirit AI" className="block object-contain h-24" />
           </div>
           <div className="flex items-center justify-center">
+            <img src="/logos/stantec.png" alt="Stantec GenerationAV" className="block object-contain w-full" />
+          </div>
+          <div className="flex items-center justify-center">
             <img src="/logos/pcf.png" alt="Project Code Foundation" className="block object-contain w-full" />
           </div>
           <div className="flex items-center justify-center">
             <img src="/logos/lynbrook-robotics.png" alt="Lynbrook Robotics Club" className="block object-contain h-24" />
           </div>
-          <div className="flex items-center justify-center">
+          {/* <div className="flex items-center justify-center">
             <img src="/logos/ten80-education.png" alt="Ten80 Education" className="block object-contain w-full" />
-          </div>
+          </div> */}
         </div>
         <p className="mt-12 text-base font-medium text-center text-gray-500">
           We've partnered with various industry-leading companies and startups
