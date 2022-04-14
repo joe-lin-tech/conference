@@ -3,10 +3,11 @@ import PageLayout from '../components/page-layout';
 import { FaCalendar, FaEdit, FaExclamationCircle, FaTimes, FaRegCircle, FaRegCheckCircle } from "react-icons/fa";
 import { navigate } from "gatsby";
 import { auth, firestore } from "../../firebase";
-import { useUser, useAuthState } from "../hooks/firebase"
+import { useUser, useAuthState, useCollection } from "../hooks/firebase"
 import { signOut } from "firebase/auth"
 import { useEffect } from "react";
-import { deleteField, doc, updateDoc } from "firebase/firestore"
+import { deleteField, doc, updateDoc, query, where, getDocs, increment, collection } from "firebase/firestore"
+import { getFunctions, httpsCallable } from "firebase/functions"
 
 const sessions = [
   {
@@ -61,6 +62,7 @@ const Account = () => {
   const [showOptIn, setShowOptIn] = useState(false)
   const [showOptOut, setShowOptOut] = useState(false)
   const [showHackathon, setShowHackathon] = useState(false)
+  const [showReferred, setShowReferred] = useState(false)
   const [size, setSize] = useState("Small")
   const [address, setAddress] = useState("")
   const [city, setCity] = useState("")
@@ -69,6 +71,7 @@ const Account = () => {
   const [phone, setPhone] = useState("")
   const [about, setAbout] = useState("")
   const [timelineLength, setTimelineLength] = useState(3)
+  const [referrerEmail, setReferrerEmail] = useState("")
 
   const { data: userData, error } = useUser(user?.uid);
 
@@ -118,6 +121,20 @@ const Account = () => {
       phone: deleteField(),
     })
     setShowOptOut(false)
+  }
+
+  const addReferrer = async (e) => {
+    e.preventDefault()
+    const functions = getFunctions()
+    const addReferrer = httpsCallable(functions, "addReferrer")
+    addReferrer({ email: referrerEmail }).then((result) => {
+      const data = result.data
+      console.log(data)
+    })
+    await updateDoc(doc(firestore, "users", user.uid), {
+      referred: true,
+    })
+    setShowReferred(false)
   }
 
   const updateProfile = async () => {
@@ -219,9 +236,12 @@ const Account = () => {
                       <dt className="text-sm font-medium text-gray-500">Email Address</dt>
                       <dd className="mt-1 text-sm text-gray-900">{userData?.email || "None"}</dd>
                     </div>
-                    <div className="sm:col-span-2">
+                    <div className="sm:col-span-1">
                       <dt className="text-sm font-medium text-gray-500">Expo Reward Points</dt>
                       <dd className="mt-1 text-sm text-gray-900">{userData?.points || "None"}</dd>
+                    </div>
+                    <div className="sm:col-span-1">
+                      <button type="button" className="btn btn-primary self-center" disabled={userData?.referred} onClick={() => setShowReferred(true)}>{userData?.referred ? "Already Referred" : "Referred by Someone?"}</button>
                     </div>
                     <div className="sm:col-span-1">
                       <dt className="text-sm font-medium text-gray-500">Street Address</dt>
@@ -495,6 +515,52 @@ const Account = () => {
             </div>
           </div>
         </div>}
+        {showReferred && (
+          <>
+            <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none">
+              <div className="relative w-auto my-6 mx-auto max-w-4xl">
+                <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none">
+                  <div className="flex flex-col items-start justify-between p-5 border-b rounded-t">
+                    <h1 className="text-xl font-semibold text-gray-900">Referral Form</h1>
+                    <span className="flex items-center">
+                      <span className="text-s font-light text-gray-900">
+                        Fill out this form if you were referred by someone else to attend this event.
+                        Your referrer will receive Expo Reward Points. Remember, that you can refer others as well and receive points yourself!</span>
+                    </span>
+                  </div>
+                  <form className="space-y-4 p-5" onSubmit={(e) => addReferrer(e)}>
+                    <label className="block">
+                      <span className="block mb-1 text-xs font-medium text-gray-700">Referrer Email Address</span>
+                      <input
+                        className="form-input"
+                        type="email"
+                        placeholder="Ex. joe@avexpo.org"
+                        required
+                        value={referrerEmail}
+                        onChange={(e) => setReferrerEmail(e.target.value)}
+                      />
+                    </label>
+                    <div className="flex">
+                      <input
+                        type="submit"
+                        className="w-full btn btn-primary btn-lg mr-1"
+                        value="Submit Referrer"
+                      />
+                      <button
+                        type="button"
+                        className="w-full btn bg-gray-200 btn-lg ml-1 hover:bg-gray-300"
+                        onClick={() => setShowReferred(false)}
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+          </>
+        )}
       </section>
     </PageLayout>
   )

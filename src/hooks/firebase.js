@@ -1,7 +1,6 @@
 import { app, auth } from "../../firebase.js";
-import { getFirestore, collection as firestoreCollection, doc, onSnapshot } from "firebase/firestore"
+import { getFirestore, collection, doc, onSnapshot } from "firebase/firestore"
 import { useAuthState as getAuthState } from 'react-firebase-hooks/auth';
-import { useCollection as getCollection } from 'react-firebase-hooks/firestore';
 import { useEffect, useState } from "react";
 
 export const useAuthState = () => {
@@ -18,20 +17,12 @@ export const useFirestore = () => {
     return getFirestore(app)
 }
 
-export const useCollection = (collection) => {
-    const firestore = useFirestore()
-    if (!firestore) {
-        return null;
-    }
-    return getCollection(firestoreCollection(firestore, collection))
-}
-
-export const _useCollection = (collection) => {
+export const useCollection = (c) => {
     const firestore = useFirestore();
     const [state, setState] = useState({ data: null, error: null });
 
     useEffect(() => {
-        const colRef = firestoreCollection(firestore, collection);
+        const colRef = collection(firestore, c);
         return onSnapshot(colRef, (snapshot) => {
             setState({ data: snapshot.docs.map(x => x.data()), error: null });
         }, (error) => {
