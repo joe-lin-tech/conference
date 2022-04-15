@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PageLayout from '../components/page-layout';
-import { FaCalendar, FaEdit, FaExclamationCircle, FaTimes, FaRegCircle, FaRegCheckCircle } from "react-icons/fa";
+import { FaCalendar, FaEdit, FaExclamationCircle, FaTimes, FaRegCircle, FaRegCheckCircle, FaBullhorn } from "react-icons/fa";
 import { navigate } from "gatsby";
 import { auth, firestore } from "../../firebase";
 import { useUser, useAuthState, useCollection } from "../hooks/firebase"
@@ -8,6 +8,7 @@ import { signOut } from "firebase/auth"
 import { useEffect } from "react";
 import { deleteField, doc, updateDoc, query, where, getDocs, increment, collection } from "firebase/firestore"
 import { getFunctions, httpsCallable } from "firebase/functions"
+import { useCountdown } from "../hooks/countdown"
 
 const sessions = [
   {
@@ -72,6 +73,7 @@ const Account = () => {
   const [about, setAbout] = useState("")
   const [timelineLength, setTimelineLength] = useState(3)
   const [referrerEmail, setReferrerEmail] = useState("")
+  const [_, hours, minutes, seconds] = useCountdown(new Date('April 16, 2022 09:00:00'))
 
   const { data: userData, error } = useUser(user?.uid);
 
@@ -170,7 +172,38 @@ const Account = () => {
   return (
     <PageLayout page="Account">
       <section className="px-4 pt-10 pb-10 mx-auto max-w-7xl">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 md:flex md:items-center md:justify-between md:space-x-5 lg:max-w-7xl lg:px-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+          <div className="p-2 rounded-lg bg-blue-500 shadow-lg sm:p-3">
+            <div className="flex items-center justify-between flex-wrap">
+              <div className="w-0 flex-1 flex items-center">
+                <span className="flex p-2 rounded-lg">
+                  <FaBullhorn className="h-6 w-6 text-white" aria-hidden="true" />
+                </span>
+                <p className="ml-3 font-medium text-white truncate">
+                  <span className="hidden md:inline">Official event starting in {hours} hours, {minutes} minutes, and {seconds} seconds.</span>
+                </p>
+              </div>
+              <div className="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
+                <a
+                  href="https://us02web.zoom.us/j/88371750063"
+                  target="_blank"
+                  className="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-blue-600 bg-white hover:bg-blue-50"
+                >
+                  Click here to join!
+                </a>
+              </div>
+              <div className="order-2 flex-shrink-0 sm:order-3 sm:ml-2">
+                <button
+                  type="button"
+                  className="-mr-1 flex p-2 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-white"
+                >
+                  <span className="sr-only">Dismiss</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="max-w-3xl mx-auto px-4 pt-6 sm:px-6 md:flex md:items-center md:justify-between md:space-x-5 lg:max-w-7xl lg:px-8">
           <div className="flex items-center space-x-5">
             <div className="flex-shrink-0">
               <div className="relative">
