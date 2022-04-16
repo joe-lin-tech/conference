@@ -180,7 +180,8 @@ const Account = () => {
                   <FaBullhorn className="h-6 w-6 text-white" aria-hidden="true" />
                 </span>
                 <p className="ml-3 font-medium text-white truncate">
-                  <span className="hidden md:inline">Official event starting in {hours} hours, {minutes} minutes, and {seconds} seconds.</span>
+                  {/* <span className="hidden md:inline">Official event starting in {hours} hours, {minutes} minutes, and {seconds} seconds.</span> */}
+                  <span className="hidden md:inline">Join the official event now!</span>
                 </p>
               </div>
               <div className="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
